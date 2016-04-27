@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>delegate</title>
+  </head>
+  <body>
+    <h1>hello</h1>
+    <ul>
+      <li data-handler="li-btn">li 1</li>
+      <li data-handler="li-btn">li 2</li>
+      <li data-handler="li-btn">li 3</li>
+    </ul>
+
+    <p data-handler="p-btn">
+      click me
+    </p>
+    <script type="text/javascript">
+      var delegate = new Delegate('data-handler');
+
+      delegate.bind('li-btn', function () {
+        console.log(this.innerHTML);
+      });
+
+      delegate.bind('p-btn', function () {
+        this.innerHTML += '.';
+      });
+
+      delegate.unbind('p-btn');
+
+      function Delegate (label, eventType, target) {
+        var _events = {};
+
+        target = target || document.body;
+
+        target.addEventListener(eventType || 'click', function (e) {
+          var target = e.target;
+
+          var eventKey = target.getAttribute(label) || '';
+
+          var events = (_events[eventKey] || [(function () {})]);
+
+          var index = 0;
+          var len = events.length;
+          for (; index < len; index++) {
+            events[index].call(target, e);
+          }
+        });
+
+        return {
+          bind: function (key, callback) {
+            var _event = _events[key] = _events[key] || [];
+            _event.push(callback);
+          },
+          unbind: function (key) {
+            delete _events[key];
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
