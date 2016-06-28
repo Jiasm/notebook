@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>example with firstline</title>
+  <style media="screen">
+    .example::first-line {
+      color: red;
+    }
+    .example::first-line a {
+      color: green;
+    }
+    .dib {
+      display: inline-block;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="example">
+    123<a href="#">test</a>
+    <br> 456
+  </div>
+  <div class="example">
+    <p>
+      2333 <a href="#">test</a>
+      <br>
+      333
+    </p>
+    <p>
+      233333
+    </p>
+  </div>
+  <!-- <div class="example">
+    <p class="dib">
+      2333333
+    </p>
+    <p class="dib">
+      233333
+    </p>
+  </div> -->
+
+</body>
+
+</html>
