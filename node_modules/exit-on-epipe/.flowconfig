@@ -1,0 +1,10 @@
+[ignore]
+.*/test.js
+.*/node_modules
+
+[include]
+exit-on-epipe.js
+
+[libs]
+
+[options]

@@ -1,0 +1,20 @@
+language: node_js
+sudo: false
+node_js:
+  - "4"
+  - "stable"
+
+before_script:
+  - date --rfc-2822
+
+script:
+  - npm test
+  - npm run lint
+  - npm run test:coverage
+
+after_script:
+  - cat coverage/lcov.info | codeclimate-test-reporter
+
+addons:
+  code_climate:
+    repo_token: 981155a680cae2274fc9ae30d0042e74b04f773e2bb9992b821b72df414474d7

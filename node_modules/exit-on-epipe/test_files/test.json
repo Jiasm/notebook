@@ -1,0 +1,36 @@
+[
+	{
+		"desc":   "normal processing",
+		"cmd":    "seq.njs 9 ௳",
+		"errmsg": "EPIPE",
+		"pass":   true
+	},
+	{
+		"desc":   "correct handling of closed stdout pipe",
+		"cmd":    "seq.njs 10000 ௳",
+		"errmsg": "EPIPE",
+		"output": "0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n"
+	},
+	{
+		"desc":   "process errors are still passed through",
+		"cmd":    "seq.njs badarg ௳",
+		"errmsg": "length",
+		"tfail":  true
+	},
+	{
+		"desc":   "other stream errors are still passed through",
+		"cmd":    "stdouterror.njs ௳",
+		"errmsg": "WTF",
+		"tfail":  true
+	},
+	{
+		"desc":   "plays nice with other error handlers",
+		"cmd":    "stdouterror.njs multi ௳",
+		"pass":   true
+	},
+	{
+		"desc":   "handles a pipe error after another stream error",
+		"cmd":    "stdouterror.njs multi2 ௳",
+		"errmsg": "SIGPIPE"
+	}
+]
