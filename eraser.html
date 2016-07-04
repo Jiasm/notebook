@@ -10,6 +10,9 @@
         width: 100%;
         top: 50%;
       }
+      .bg {
+        display: none;
+      }
     </style>
   </head>
   <body>
@@ -19,6 +22,20 @@
     <img class="bg" src="http://sandbox.runjs.cn/uploads/rs/85/jud8ox3q/br.jpg"/>
   	<script type="text/javascript" src="http://sandbox.runjs.cn/uploads/rs/85/jud8ox3q/jquery-1.11.1.min.js"></script>
     <script type="text/javascript">
+      CanvasRenderingContext2D.prototype.roundRect = function (x, y, w, h, r) {
+    		var min_size = Math.min(w, h);
+    		if (r > min_size / 2) r = min_size / 2;
+    		// 开始绘制
+    		this.beginPath();
+    		this.moveTo(x + r, y);
+    		this.arcTo(x + w, y, x + w, y + h, r);
+    		this.arcTo(x + w, y + h, x, y + h, r);
+    		this.arcTo(x, y + h, x, y, r);
+    		this.arcTo(x, y, x + w, y, r);
+    		this.closePath();
+    		return this;
+    	}
+
       function Eraser (dom, src) {
 
         var $dom = $(dom);
@@ -53,12 +70,16 @@
           $canvas.appendTo($dom.parent())
 
           $canvas.on('mousemove', function (e) {
-            var radius = 20;
-            var top = e.clientY - radius;
-            var left = e.clientX - radius;
+            var radius = 100;
+            var top = e.offsetY - radius;
+            var left = e.offsetX - radius;
             var width = radius * 2;
             var height = radius * 2;
-            context.drawImage(img, left, top, width, height, left, top, width, height)
+            var pattern = context.createPattern(img, "no-repeat");
+            context.roundRect(left, top, width, height, 100);
+            // context.drawImage(img, left, top, width, height, left, top, width, height)
+            context.fillStyle = pattern;
+            context.fill()
           })
         })
       }
