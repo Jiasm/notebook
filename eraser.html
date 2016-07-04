@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>eraser</title>
+    <style media="screen">
+      .title {
+        position: absolute;
+        text-align: center;
+        width: 100%;
+        top: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="title">
+      <h1>test</h1>
+    </div>
+    <img class="bg" src="http://sandbox.runjs.cn/uploads/rs/85/jud8ox3q/br.jpg"/>
+  	<script type="text/javascript" src="http://sandbox.runjs.cn/uploads/rs/85/jud8ox3q/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript">
+      function Eraser (dom, src) {
+
+        var $dom = $(dom);
+        var top = $dom.offset().top;
+        var left = $dom.offset().left;
+        var width = $dom.width();
+        var height = $dom.height();
+
+        var $img = $('<img>');
+        var img = $img[0];
+        $img.css({
+          display: 'none',
+          width: width,
+          height: height
+        }).attr({
+          src: src
+        });
+        $img.appendTo($dom.parent());
+        $img.on('load', function () {
+          var $canvas = $('<canvas>');
+          var context = $canvas[0].getContext('2d');
+
+          $canvas.css({
+            position: 'absolute',
+            top: top,
+            left: left
+          }).attr({
+            width: width,
+            height: height
+          })
+
+          $canvas.appendTo($dom.parent())
+
+          $canvas.on('mousemove', function (e) {
+            var radius = 20;
+            var top = e.clientY - radius;
+            var left = e.clientX - radius;
+            var width = radius * 2;
+            var height = radius * 2;
+            context.drawImage(img, left, top, width, height, left, top, width, height)
+          })
+        })
+      }
+
+      $(function () {
+        var eraser = new Eraser($('.bg'), 'http://sandbox.runjs.cn/uploads/rs/85/jud8ox3q/br.jpg');
+      })
+    </script>
+  </body>
+</html>
