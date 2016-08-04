@@ -49,14 +49,19 @@ function sort (rules, data) {
     data.sort((a, b) => order === 'desc' ? a[rule] < b[rule] : a[rule] > b[rule]).map(({[rule]: key}, index, data) => {
       let arr
 
+      // 如果当前规则下 已经存在 某个值的节点
+      // 直接取出该节点对应的 NodeArray
       if (mapping.has(key)) {
         arr = mapping.get(key)
       } else {
+        // 这种属于初始化会执行的地方
+        // 声明一个NodeArray 并塞到外层 NodeArray 以及 去重参照的 Map 中
         arr = new NodeArray()
         result.push(arr)
         mapping.set(key, arr)
       }
 
+      // 将当前节点 push到 当前NodeArray节点
       arr.push(data[index])
     })
     // 这一步执行完后 会得到一个二维数组
@@ -66,6 +71,10 @@ function sort (rules, data) {
     // 如果有 会将当前数组中所有的节点作为 被排序的集合 传入函数 递归调用
     if (ruleList.length) {
       for (let key in result) {
+        // 示例：
+        // [1, 2]
+        // =>
+        // [[1], [2]]
         result[key] = func(ruleList, result[key])
       }
     }
