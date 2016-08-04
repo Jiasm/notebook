@@ -40,9 +40,7 @@ function sort (rules, data) {
    * @param  {Array} data   这个就是要被排序的一个集合
    * @return {NodeArray}    返回一个Array的子集
    */
-  let func = (rules, data) => {
-    let [[rule, order]] = rules   // [key, value]
-    let ruleList = rules.slice(1) // 取出剩余规则
+  let func = ([[rule, order], ...ruleList], data) => {
     let result = new NodeArray()
     let mapping = new Map()       // 作为一个去重的参照
 
