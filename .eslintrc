@@ -1,0 +1,14 @@
+extends: standard
+globals:
+  moment: false
+env:
+  browser: true
+  node: true
+  jquery: true
+plugins:
+  [react]
+ecmaFeatures:
+  jsx: true
+rules:
+  react/jsx-uses-react: error
+  react/jsx-uses-vars: error

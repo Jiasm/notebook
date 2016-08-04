@@ -1,0 +1,19 @@
+{
+    "plugins": [
+        "esformatter-braces",
+        "esformatter-jsx",
+        "esformatter-var-each",
+        "esformatter-quotes",
+        "esformatter-collapse-objects"
+    ],
+    "jsx": {
+        "attrsOnSameLineAsTag": false,
+        "maxAttrsOnTag": 3,
+        "firstAttributeOnSameLine": true,
+        "alignWithFirstAttribute": false
+    },
+    "indent": {
+      "SwitchCase": 1,
+      "SwitchStatement": 0
+    }
+}
