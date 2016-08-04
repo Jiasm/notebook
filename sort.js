@@ -46,7 +46,7 @@ function sort (rules, data) {
     let result = new NodeArray()
     let mapping = new Map()       // 作为一个去重的参照
 
-    data.sort((a, b) => order === 'desc' ? a[rule] < b[rule] : a[rule] > b[rule]).map(({[rule]: key}, index, data) => {
+    data.sort(({[rule]: a}, {[rule]: b}) => order === 'desc' ? a < b : a > b).map(({[rule]: key}, index, data) => {
       let arr
 
       // 如果当前规则下 已经存在 某个值的节点
