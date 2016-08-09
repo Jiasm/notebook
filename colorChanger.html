@@ -8,18 +8,20 @@
     <script type="text/javascript">
       class Color {
         static hex2rgb (str) {
+          let char = '[0-9a-fA-F]'
+
           str = str.slice(1)
 
-          if (!/^[0-9a-zA-Z]{3}|[0-9a-zA-Z]{6}$/.test(str)) {
+          if (!new RegExp(`^${char}{3}|${char}{6}$`).test(str)) {
             throw new Error ('can not parse')
           }
 
           let isShort = str.length === 3
           if (isShort) {
-            str = str.replace(/([0-9a-zA-Z])?/g, '$1$1')
+            str = str.replace(new RegExp(`(${char})?`, 'g'), '$1$1')
           }
 
-          let matches = str.match(/[0-9a-zA-Z]{2}/g).map(num => parseInt(num, 16))
+          let matches = str.match(new RegExp(`${char}{2}`, 'g')).map(num => parseInt(num, 16))
 
           return `rgb(${matches.join(', ')})`
         }
@@ -34,22 +36,26 @@
             throw new Error ('wrong value')
           }
 
+          let shortCount = 0
+
           matches = matches.map(num => {
             let hex = (+num).toString(16)
 
-            // if (hex[0] === hex[1]) {
-            //   return hex[0]
-            // }
+            shortCount += +(hex[0] === hex[1])
 
             return hex
           })
+
+          if (shortCount === 3) {
+            matches = matches.map(([num]) => num)
+          }
 
           return `#${matches.join('')}`
         }
       }
 
       console.log(Color.hex2rgb('#000'))
-      console.log(Color.rgb2hex('rgba(0, 0, 0, 1)'))
+      console.log(Color.rgb2hex('rgba(255, 255, 255, 1)'))
     </script>
   </body>
 </html>
