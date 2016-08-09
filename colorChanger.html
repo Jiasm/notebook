@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      class Color {
+        static hex2rgb (str) {
+          str = str.slice(1)
+
+          if (!/^[0-9a-zA-Z]{3}|[0-9a-zA-Z]{6}$/.test(str)) {
+            throw new Error ('can not parse')
+          }
+
+          let isShort = str.length === 3
+          if (isShort) {
+            str = str.replace(/([0-9a-zA-Z])?/g, '$1$1')
+          }
+
+          let matches = str.match(/[0-9a-zA-Z]{2}/g).map(num => parseInt(num, 16))
+
+          return `rgb(${matches.join(', ')})`
+        }
+        static rgb2hex (str) {
+          if (!/^rgb(a)?\(/.test(str)) {
+            throw new Error ('can not parse')
+          }
+
+          var matches = str.match(/\d+/g).slice(0, 3).filter(num => +num >= 0 && +num <= 255)
+
+          if (matches.length < 3) {
+            throw new Error ('wrong value')
+          }
+
+          matches = matches.map(num => {
+            let hex = (+num).toString(16)
+
+            if (hex[0] === hex[1]) {
+              return hex[0]
+            }
+
+            return hex
+          })
+
+          return `#${matches.join('')}`
+        }
+      }
+
+      console.log(Color.hex2rgb('#000'))
+      console.log(Color.rgb2hex('rgba(0, 0, 0, 1)'))
+    </script>
+  </body>
+</html>
