@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>test animation</title>
+    <style media="screen">
+      body {
+        position: absolute;
+        height: 100%;
+        overflow: hidden;
+        width: 100%;
+      }
+      .ani {
+        position: absolute;
+        border-radius: 5px;
+        left: 30%;
+        animation-timing-function: linear;
+        animation-duration: 2s;
+        animation-fill-mode: forwards;
+      }
+      .ani-1 {
+        bottom: 65%;
+        width: 20%;
+        height: 10%;
+        background-color: #2f508e;
+        animation-name: ani-1;
+      }
+      @keyframes ani-1 {
+        from, 10% {
+          transform: scale(0, 0);
+          bottom: 25%;
+          left: 50%;
+        }
+        25%, 40% {
+          transform: scale(1, 1);
+          left: 30%;
+          bottom: 40%;
+        }
+        55% {
+          bottom: 45%;
+        }
+        65%, to {
+          bottom: 65%;
+        }
+      }
+      .ani-2 {
+        bottom: 40%;
+        width: 20%;
+        height: 25%;
+        margin-bottom: -1px;
+        background-color: #9a9a9a;
+        animation-name: ani-2;
+      }
+      @keyframes ani-2 {
+        from, 40% {
+          bottom: -20%;
+          opacity: 0;
+        }
+        55% {
+          bottom: 20%;
+          opacity: 1;
+        }
+        65%, to {
+          bottom: 40%;
+        }
+      }
+      .ani-3 {
+        bottom: 25%;
+        width: 20%;
+        height: 15%;
+        margin-bottom: -2px;
+        background-color: #ffc542;
+        animation-name: ani-3;
+        /*animation-delay: .2s;*/
+      }
+      @keyframes ani-3 {
+        from, 45% {
+          bottom: -35%;
+          opacity: 0;
+        }
+        60% {
+          bottom: 5%;
+          opacity: 1;
+        }
+        70%, to {
+          bottom: 25%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="ani ani-1"></div>
+    <div class="ani ani-2"></div>
+    <div class="ani ani-3"></div>
+  </body>
+</html>
