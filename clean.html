@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>demo</title>
+    <style media="screen">
+      body {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+				color: #fff;
+				font-family: "PingFang SC", "Heiti SC", "San Francisco", "Helvetica", "Microsoft YaHei";
+				font-weight: 200;
+      }
+      .wrap {
+        position: absolute;
+        width: 40%;
+        height: 20%;
+        overflow: hidden;
+        animation: visible 2s;
+        z-index: 2;
+				backface-visibility: hidden;
+      }
+      .wrap>* {
+        position: fixed;
+        width: 40%;
+        height: 20%;
+        background-color: #03A9F4;
+      }
+      @keyframes visible {
+        from {
+          width: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div>
+        <script type="text/javascript">
+          document.write('这里是一串莫名其妙的文字'.repeat(20))
+        </script>
+      </div>
+    </div>
+  </body>
+</html>
