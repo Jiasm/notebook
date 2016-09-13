@@ -1,0 +1,14 @@
+{
+  "name": "biaoqing",
+  "version": "1.0.0",
+  "description": "bq.config.js里边存的是一些配置项，里边有中文说明-.- ``` node . [png/gif] ``` 会在当前目录下生成对应的.php文件，文件名就是excel对应的文件名，可一次生成多个，config里边配置即可",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "node-xlsx": "^0.7.2"
+  }
+}
