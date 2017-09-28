@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>invert color</title>
+  <style media="screen">
+    .back {
+      background: blue;
+      width: 100px;
+      height: 100px;
+      display: inline-block;
+    }
+
+    .back:nth-of-type(2) {
+      background: red;
+    }
+
+    .back:nth-of-type(3) {
+      background: green;
+    }
+
+    .back:nth-of-type(3) {
+      background: yellow;
+    }
+
+    .back:nth-of-type(4) {
+      background: pink;
+    }
+
+    .back:nth-of-type(5) {
+      background: black;
+    }
+
+    .back:nth-of-type(6) {
+      background: white;
+    }
+
+    .text {
+      background: inherit;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: invert(100%);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="back">
+    <p class="text">Hello</p>
+  </div>
+  <div class="back">
+    <p class="text">Hello</p>
+  </div>
+  <div class="back">
+    <p class="text">Hello</p>
+  </div>
+  <div class="back">
+    <p class="text">Hello</p>
+  </div>
+  <div class="back">
+    <p class="text">Hello</p>
+  </div>
+  <div class="back">
+    <p class="text">Hello</p>
+  </div>
+</body>
+
+</html>
