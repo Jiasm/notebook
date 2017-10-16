@@ -20,29 +20,34 @@ var jsonData = [
   {"provname":"广东","cityname":"惠州","localname":"厚街","deptname":"保险7","struid":"C0092","manager":"小名","telephone":"020-110"}
 ]
 
-function build (keys, data) {
-  function func (keys, data) {
-    let [key, ...nextKeys] = keys
-    let hasNextKey = nextKeys && nextKeys.length
-    let map = {}
+/**
+ * 转换一维数组为树形数组
+ * @param  {Array} keys  树形结构的参照key
+ * @param  {Array} data  待转换的原始数据
+ * @return {Array}       转换后的数组
+ * @api    private
+ */
+function translate (keys, data) {
+  let [key, ...nextKeys] = keys
+  let hasNextKey = nextKeys && nextKeys.length
+  let map = {}
 
-    data.forEach(item => {
-      let k = item[key]
-      if (k && !map[k]) {
-        let childList = data.filter(item => item[key] === k).map(item => delete item[key] && item)
-        map[k] = {
-          [key]: k,
-          list: hasNextKey ? func(nextKeys, childList) : childList
-        }
+  data.forEach(item => {
+    let k = item[key]
+    if (k && !map[k]) {
+
+      // 获取源数组中所有命中的`item`认为这些`item`为子项
+      let childList = data.filter(item => item[key] === k).map(item => delete item[key] && item)
+      map[k] = {
+        [key]: k,
+        list: hasNextKey ? translate(nextKeys, childList) : childList  // 如果还有用来分组的key，继续执行，否则返回数组
       }
-    })
+    }
+  })
 
-    return Object.values(map)
-  }
-
-  return func(keys, data)
+  return Object.values(map)
 }
 
-let result = build(['provname', 'cityname', 'localname'], jsonData)
+let result = translate(['provname', 'cityname', 'localname'], jsonData)
 
 console.log(result)
