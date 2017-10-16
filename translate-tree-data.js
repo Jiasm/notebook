@@ -7,40 +7,40 @@
  */
 
 var jsonData = [
-	{"provname":"广东","cityname":"深圳","localname":"罗田","deptname":"保险1","struid":"C0092","manager":"小飞","telephone":"020-110"},
-	{"provname":"广东","cityname":"深圳","localname":"福田","deptname":"保险2","struid":"C0092","manager":"小张","telephone":"020-110"},
-	{"provname":"广东","cityname":"深圳","localname":"福田","deptname":"保险3","struid":"C0092","manager":"小名","telephone":"020-110"},
-	{"provname":"广东","cityname":"东莞","localname":"厚街","deptname":"保险4","struid":"C0092","manager":"小飞","telephone":"020-110"},
-	{"provname":"广东","cityname":"广州","localname":"白云","deptname":"保险5","struid":"C0092","manager":"小张","telephone":"020-110"},
-	{"provname":"广东","cityname":"广州","localname":"荔湾","deptname":"保险6","struid":"C0092","manager":"小张","telephone":"020-110"},
-	{"provname":"广东","cityname":"东莞","localname":"厚街","deptname":"保险7","struid":"C0092","manager":"小名","telephone":"020-110"},
-	{"provname":"广东","cityname":"惠州","localname":"厚街","deptname":"保险7","struid":"C0092","manager":"小名","telephone":"020-110"},
-	{"provname":"广东","cityname":"东莞","localname":"厚街","deptname":"保险7","struid":"C0092","manager":"小名","telephone":"020-110"},
-	{"provname":"广东","cityname":"惠州","localname":"厚街","deptname":"保险7","struid":"C0092","manager":"小名","telephone":"020-110"},
-	{"provname":"广东","cityname":"惠州","localname":"厚街","deptname":"保险7","struid":"C0092","manager":"小名","telephone":"020-110"}
+  {"provname":"广东","cityname":"深圳","localname":"罗田","deptname":"保险1","struid":"C0092","manager":"小飞","telephone":"020-110"},
+  {"provname":"广东","cityname":"深圳","localname":"福田","deptname":"保险2","struid":"C0092","manager":"小张","telephone":"020-110"},
+  {"provname":"广东","cityname":"深圳","localname":"福田","deptname":"保险3","struid":"C0092","manager":"小名","telephone":"020-110"},
+  {"provname":"广东","cityname":"东莞","localname":"厚街","deptname":"保险4","struid":"C0092","manager":"小飞","telephone":"020-110"},
+  {"provname":"广东","cityname":"广州","localname":"白云","deptname":"保险5","struid":"C0092","manager":"小张","telephone":"020-110"},
+  {"provname":"广东","cityname":"广州","localname":"荔湾","deptname":"保险6","struid":"C0092","manager":"小张","telephone":"020-110"},
+  {"provname":"广东","cityname":"东莞","localname":"厚街","deptname":"保险7","struid":"C0092","manager":"小名","telephone":"020-110"},
+  {"provname":"广东","cityname":"惠州","localname":"厚街","deptname":"保险7","struid":"C0092","manager":"小名","telephone":"020-110"},
+  {"provname":"广东","cityname":"东莞","localname":"厚街","deptname":"保险7","struid":"C0092","manager":"小名","telephone":"020-110"},
+  {"provname":"广东","cityname":"惠州","localname":"厚街","deptname":"保险7","struid":"C0092","manager":"小名","telephone":"020-110"},
+  {"provname":"广东","cityname":"惠州","localname":"厚街","deptname":"保险7","struid":"C0092","manager":"小名","telephone":"020-110"}
 ]
 
 function build (keys, data) {
-	function func (keys, data) {
-		let [key, ...nextKeys] = keys
-		let hasNextKey = nextKeys && nextKeys.length
-		let map = {}
+  function func (keys, data) {
+    let [key, ...nextKeys] = keys
+    let hasNextKey = nextKeys && nextKeys.length
+    let map = {}
 
-		data.forEach(item => {
-			let k = item[key]
-			if (k && !map[k]) {
-				let childList = data.filter(item => item[key] === k).map(item => delete item[key] && item)
-				map[k] = {
-					[key]: k,
-					list: hasNextKey ? func(nextKeys, childList) : childList
-				}
-			}
-		})
+    data.forEach(item => {
+      let k = item[key]
+      if (k && !map[k]) {
+        let childList = data.filter(item => item[key] === k).map(item => delete item[key] && item)
+        map[k] = {
+          [key]: k,
+          list: hasNextKey ? func(nextKeys, childList) : childList
+        }
+      }
+    })
 
-		return Object.values(map)
-	}
+    return Object.values(map)
+  }
 
-	return func(keys, data)
+  return func(keys, data)
 }
 
 let result = build(['provname', 'cityname', 'localname'], jsonData)
