@@ -42,3 +42,7 @@ function build (keys, data) {
 
 	return func(keys, data)
 }
+
+let result = build(['provname', 'cityname', 'localname'], jsonData)
+
+console.log(result)
