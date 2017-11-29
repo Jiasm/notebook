@@ -3,13 +3,15 @@
  */
  
  ;(async () => {
-  function build (func) {
-    return ({success, error} = {}) => {
-      let pro = new Promise(func)
+  function build (executor) {
+    return (param = {}, ...args) => {
+      let { success, error } = param
 
-      if (!success) return pro
+      let prom = new Promise((resolve, reject) => executor.call(this, resolve, reject, param, ...args))
 
-      pro.then(success).catch(error)
+      if (!success) return prom
+
+      prom.then(success).catch(error)
     }
   }
 
