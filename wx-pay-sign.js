@@ -14,7 +14,10 @@ const appInfo = {
  */
 const paySign = (arg) => {
   // 按照字典排序所有参数
-  let str = Object.keys(arg).sort((a, b) => a == b ? 0: a > b ? 1 : -1).map(key => `${key}=${arg[key]}`).join('&')
+  let str = Object.keys(arg)
+    .sort((a, b) => a == b ? 0: a > b ? 1 : -1)
+    .map(key => `${key}=${arg[key]}`)
+    .join('&')
 
   // 将key拼接在最后
   let stringSignTemp = `${str}&key=${appInfo.key}` // 注：key为商户平台设置的密钥key
@@ -25,11 +28,16 @@ const paySign = (arg) => {
 }
 
 function md5 (str) {
-  return crypto.createHash('md5').update(str).digest('hex').toString()
+  return crypto
+    .createHash('md5')
+    .update(str)
+    .digest('hex')
+    .toString()
 }
 
 function hashMac (str) {
-  let hash = crypto.createHmac('sha256', appInfo.key)
+  let hash = crypto
+    .createHmac('sha256', appInfo.key)
     .update(str)
     .digest('hex')
   return hash
