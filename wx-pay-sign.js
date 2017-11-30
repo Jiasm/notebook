@@ -18,8 +18,7 @@ const paySign = (arg) => {
 
   // 将key拼接在最后
   let stringSignTemp = `${str}&key=${appInfo.key}` // 注：key为商户平台设置的密钥key
-  // let sign = md5(stringSignTemp) // 注：MD5签名方式
-  let sign = hashMac(stringSignTemp) // 注：HMAC-SHA256签名方式
+  let sign = arg.sign_type === 'MD5' ? /* MD5签名方式 */ md5(stringSignTemp) : /* HMAC-SHA256签名方式 */ hashMac(stringSignTemp)
   return sign.toUpperCase()
 }
 
