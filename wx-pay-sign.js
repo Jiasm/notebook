@@ -8,6 +8,7 @@ const appInfo = {
 
 /**
  * 生成微信支付使用的签名
+ * 微信提供的在线校验工具： https://pay.weixin.qq.com/wiki/doc/api/jsapi.php?chapter=20_1
  * @param  {Object} arg 调用接口传递的所有参数
  * @return {String}     加密后的签名
  */
