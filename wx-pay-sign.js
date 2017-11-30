@@ -23,7 +23,7 @@ const paySign = (arg) => {
 }
 
 function md5 (str) {
-  return crypto.createHash('md5').update(str).digest('hex').toString('utf8')
+  return crypto.createHash('md5').update(str).digest('hex').toString()
 }
 
 function hashMac (str) {
