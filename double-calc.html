@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>依据年化利率，何时资金才会翻倍</title>
+</head>
+
+<body>
+  <label for="capital">本金：</label>
+  <input type="number" id="capital" />
+  <label for="rate">年化利率：</label>
+  <input type="number" id="rate" />
+
+  <p id="output"></p>
+
+  <script>
+      window.addEventListener('load', function () {
+        let $capital = document.querySelector('#capital')
+        let $rate = document.querySelector('#rate')
+        let $output = document.querySelector('#output')
+
+        $capital.addEventListener('input', changeHandler)
+        $rate.addEventListener('input', changeHandler)
+
+        function changeHandler () {
+          let capital = Number($capital.value)
+          let rate = Number($rate.value)
+          if (!capital || !rate) {
+            return
+          }
+
+          let count = calc(capital, rate, capital * 2)
+
+          let year = count / 365 | 0
+          let month = (count / 365 - year) * 12 | 0
+
+
+          $output.innerHTML = `预计为：${year}年${`00${month}`.slice(-2)}月后资金翻倍`
+        }
+
+        function calc (capital, rate, goal) {
+          let current = capital
+          let count = 0
+          do {
+            current += capital * rate / 365
+            if (current >= goal) {
+              break
+            }
+          } while (++count)
+
+          return count
+        }
+      })
+    </script>
+</body>
+
+</html>
