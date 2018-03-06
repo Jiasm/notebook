@@ -16,7 +16,7 @@ function supports (key, value) {
     // 检查完毕后移除该元素
     document.body.removeChild(_tmp)
 
-    if (result) return new Error(`unsupported value in: ${originKey}`)
+    if (result) return new Error(`unsupported value in: ${originKey} with: ${value}`)
   }
 
   return true
