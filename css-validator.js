@@ -1,3 +1,9 @@
+/**
+ * 检测CSS是否有效
+ * @param  {String} key     CSS规则的key： border background
+ * @param  {String} value   选填，CSS规则的值： #fff cover ...
+ * @return {Boolean}        如果返回true则表示规则可用
+ */
 function supports (key, value) {
   let originKey = key
   key = key.replace(/-(\w)/g, (_, $1) => $1.toUpperCase()) // 转成驼峰
