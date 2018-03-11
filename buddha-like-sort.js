@@ -5,7 +5,7 @@
  * @param  {Boolean}  desc  是否为降序排序
  */
 
-function buddhaSort (arr, desc) {
+function buddhaLikeSort (arr, desc) {
   let len = arr.length - 1
   while (!arr.every((item, index) => {
     return len === index || (desc ? item >= arr[index + 1] : item <= arr[index + 1])
@@ -22,5 +22,5 @@ function sortArr (arr) {
 }
 
 // test code
-console.log(buddhaSort([3, 1, 2]))
-console.log(buddhaSort([3, 1, 2], true))
+console.log(buddhaLikeSort([3, 1, 2]))
+console.log(buddhaLikeSort([3, 1, 2], true))
