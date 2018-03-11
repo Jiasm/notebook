@@ -1,6 +1,8 @@
 /**
  * buddha like sort
  * strong and powerful
+ *
+ * 代码就在这里，如果和它有缘，数组自然会进行排序
  * @param  {Array}    arr   要进行排序的数组
  * @param  {Boolean}  desc  是否为降序排序
  */
