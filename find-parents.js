@@ -34,11 +34,11 @@
    */
   function findParents (data, checker) {
     if (!data.children) return // 到达最底层节点
-    if (includes(data, checker)) return [data] // 当前节点的字节点包含所要查找的元素
+    if (includes(data, checker)) return [data] // 当前节点的子节点包含所要查找的元素
 
     let result = null
     data.children.forEach(item => {
-      let childResult = findParents(item, checker) // 循环当前节点的字节点，调用自身
+      let childResult = findParents(item, checker) // 循环当前节点的子节点，调用自身
 
       if (childResult) result = [].concat(data, childResult) // 如果下层结果有返回数据，则拼自身到返回值数组中
     })
@@ -47,7 +47,7 @@
   }
 
   /**
-   * 获取一个节点是否包含对应的字节点
+   * 获取一个节点是否包含对应的子节点
    * @param  {Object}   data    处理的数据源
    * @param  {Function} checker 检查器
    * @return {Boolean}          获取结果是否满足条件
