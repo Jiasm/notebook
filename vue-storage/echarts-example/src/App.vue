@@ -88,13 +88,13 @@ export default {
   },
   methods:{
       drawChart (type = 'line') {
-          this.charts && this.charts.dispose() // 每次创建前销毁之前的实例即可
+          // this.charts && this.charts.dispose() // 每次创建前销毁之前的实例即可
           this.charts = echarts.init(document.getElementById('echarts'))
 
           this.charts.setOption({
               ...this.defaultOptions,
               ...type === 'line' ? this.lineOptions : this.pieOptions
-          })
+          }, true)
       }
   },
   //调用
