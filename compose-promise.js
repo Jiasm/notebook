@@ -15,7 +15,7 @@ function compose (...funcs) {
 
       let result = promiseify(func(arg))
 
-      funcs.length ? result.then(data => exec(data).then(resolve)).catch(reject) : result.then(resolve).catch(reject)
+      result.then(data => funcs.length ? exec(data).then(resolve).catch(reject) : resolve(data)).catch(reject)
     })
     // return funcs.length ? exec(result) : result
   }
@@ -34,6 +34,4 @@ compose(
   data => new Promise((resolve, reject) => setTimeout(() => resolve(`${data}%`), 1000)),
   data => new Promise((resolve, reject) => setTimeout(() => resolve(Number(data).toFixed(2), 2000))),
   data => data + 20
-)(15).then(data => {
-  console.log(data)
-})
+)(15).then(console.log)
