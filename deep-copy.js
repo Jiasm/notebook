@@ -1,7 +1,6 @@
 'use strict'
 
 function copy (orig) {
-  
   // copy has same prototype as orig
   let copy = Object.create(Object.getPrototypeOf(orig))
 
@@ -13,10 +12,10 @@ function copy (orig) {
 
 function copyOwnPropertiesFrom (target, source) {
   Object.getOwnPropertyNames(source)
-  .forEach(propKey => {
-    let desc = Object.getOwnPropertyDescriptor(source, propKey)
-	Object.defineProperty(target, propKey, desc)
-  })
+    .forEach(propKey => {
+      let desc = Object.getOwnPropertyDescriptor(source, propKey)
+      Object.defineProperty(target, propKey, desc)
+    })
 
   return target
 }
