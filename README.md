@@ -4,7 +4,7 @@
 
 ## JavaScript
 
-1. [deep-copy](/deep-copy.js)
+1. [deep-copy](./deep-copy.js)
 
 ## CSS
 
