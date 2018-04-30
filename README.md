@@ -15,7 +15,8 @@ id|title|description
 5|[callback-promise](./javascript/callback-promise.js)|*一个同时支持promise和callback的函数生成器*
 8|[callback-promise-2](./javascript/callback-promise-2.js)|*同上*
 9|[cfkj](./javascript/cfkj.js)|*乘法口诀生成*
-10|[compose-promise-with-next](./compose-promise-with-next.js)|*将左侧函数返回值传入右侧函数，并支持`next`提前调用(简易版koa中间件实现理念)*
+10|[compose-promise-with-next](./javascript/compose-promise-with-next.js)|*将左侧函数返回值传入右侧函数，并支持`next`提前调用(简易版koa中间件实现理念)*
+11|[dataset](./javascript/dataset.js)|*dataset的polyfill版本，使用正则实现*
 ## CSS
 
 id|title|description
