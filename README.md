@@ -30,3 +30,9 @@ id|title|description
 id|title|description
 :-:|:-|:-
 1|[ES6默认参数与ES5版的polyfill默认参数在处理时的区别](./javascript/default-arguments.js)|ES6默认参数只会命中`undefined`，而之前的ES5版本会命中所有可以转换为`false`的参数
+
+## 面试题
+
+id|title|description
+:-:|:-|:-
+1|[树形结构获取某个节点所有父节点元素](./javascript/find-parents.js)|
