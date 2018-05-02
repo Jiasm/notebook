@@ -36,3 +36,4 @@ id|title|description
 id|title|description
 :-:|:-|:-
 1|[树形结构获取某个节点所有父节点元素](./javascript/find-parents.js)|
+2|[获取距离当前数字最近的某个频率值](./javascript/get-range.js)|
