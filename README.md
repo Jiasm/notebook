@@ -21,7 +21,7 @@ id|title|description
 
 id|title|description
 :-:|:-|:-
-1|[一个简单的多段式动画](./html/animation.html)|
+1|[一个简单的多段式动画](https://blog.jiasm.org/notebook/html/animation.html)|
 
 ## HTML
 
