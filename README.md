@@ -21,7 +21,7 @@ id|title|description
 
 id|title|description
 :-:|:-|:-
-1|[一个简单的多段式动画](./html/animate.html)|
+1|[一个简单的多段式动画](./html/animation.html)|
 
 ## HTML
 
