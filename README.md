@@ -38,3 +38,4 @@ id|title|description
 1|[树形结构获取某个节点所有父节点元素](./javascript/find-parents.js)|
 2|[获取距离当前数字最近的某个频率值](./javascript/get-range.js)|
 3|[根据某几个数字生成某个长度的所有不重复数字组合(格雷码)](./javascript/gray-code.js)
+4|[获取某种规律的数字](./javascript/get-num-by-somerule1.js)|实现一个函数`getNum`，按如下规则输出第`count`个数结果，输入： `3` 输出： `13`<br/>备注： 已知数列规则为`[1, 3, 7, 13, 21, 31, 43 ...]`<br/> 计数从0开始
