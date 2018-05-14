@@ -1,27 +1,30 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>eraser</title>
-    <style media="screen">
-      .title {
-        position: absolute;
-        text-align: center;
-        width: 100%;
-        top: 50%;
-      }
-      .bg {
-        display: none;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="title">
-      <h1>test</h1>
-    </div>
-    <img class="bg" src="http://sandbox.runjs.cn/uploads/rs/85/jud8ox3q/br.jpg"/>
-  	<script type="text/javascript" src="http://sandbox.runjs.cn/uploads/rs/85/jud8ox3q/jquery-1.11.1.min.js"></script>
-    <script type="text/javascript">
+
+<head>
+  <meta charset="utf-8">
+  <title>eraser</title>
+  <style media="screen">
+    .title {
+      position: absolute;
+      text-align: center;
+      width: 100%;
+      top: 50%;
+    }
+
+    .bg {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="title">
+    <h1>test</h1>
+  </div>
+  <img class="bg" src="../dist/img/br.jpg" />
+  <script type="text/javascript" src="../dist/js/jquery-1.11.1.min.js"></script>
+  <script type="text/javascript">
       CanvasRenderingContext2D.prototype.roundRect = function (x, y, w, h, r) {
     		var min_size = Math.min(w, h);
     		if (r > min_size / 2) r = min_size / 2;
@@ -88,5 +91,6 @@
         var eraser = new Eraser($('.bg'), 'http://sandbox.runjs.cn/uploads/rs/85/jud8ox3q/br.jpg');
       })
     </script>
-  </body>
+</body>
+
 </html>
