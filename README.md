@@ -17,6 +17,8 @@ id|title|description
 9|[cfkj](./javascript/cfkj.js)|*乘法口诀生成*
 10|[compose-promise-with-next](./javascript/compose-promise-with-next.js)|*将左侧函数返回值传入右侧函数，并支持`next`提前调用(简易版koa中间件实现)*
 11|[dataset](./javascript/dataset.js)|*dataset的polyfill版本，使用正则实现*
+12|[sort](./javascript/sort.js)|*将一个Object数组按照某些可配置的规则进行排序*
+13|[group-by-some-key](./javascript/translate-tree-data.js)|*将一个一维的数组按照某些分组key转换为树形结构*
 
 ## CSS
 
