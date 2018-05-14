@@ -14,11 +14,10 @@ id|title|description
 6|[buddha-like-sort](./javascript/buddha-like-sort.js)|*佛系排序*
 5|[callback-promise](./javascript/callback-promise.js)|*一个同时支持promise和callback的函数生成器*
 8|[callback-promise-2](./javascript/callback-promise-2.js)|*同上*
-9|[cfkj](./javascript/cfkj.js)|*乘法口诀生成*
-10|[compose-promise-with-next](./javascript/compose-promise-with-next.js)|*将左侧函数返回值传入右侧函数，并支持`next`提前调用(简易版koa中间件实现)*
-11|[dataset](./javascript/dataset.js)|*dataset的polyfill版本，使用正则实现*
-12|[sort](./javascript/sort.js)|*将一个Object数组按照某些可配置的规则进行排序*
-13|[group-by-some-key](./javascript/translate-tree-data.js)|*将一个一维的数组按照某些分组key转换为树形结构*
+9|[compose-promise-with-next](./javascript/compose-promise-with-next.js)|*将左侧函数返回值传入右侧函数，并支持`next`提前调用(简易版koa中间件实现)*
+10|[dataset](./javascript/dataset.js)|*dataset的polyfill版本，使用正则实现*
+11|[sort](./javascript/sort.js)|*将一个Object数组按照某些可配置的规则进行排序*
+12|[group-by-some-key](./javascript/translate-tree-data.js)|*将一个一维的数组按照某些分组key转换为树形结构*
 
 ## CSS
 
@@ -45,3 +44,4 @@ id|title|description
 5|[根据传入数字重排后组成一个最大数字](./javascript/max-five-digits.js)
 6|[获取固定数量数字相加的值](./javascript/min-max-sum.js)|获取几个数字相加所得的最小/最大结果
 7|[重组数字后获取一个更大的数字](./javascript/nextbigger.js)|获取由传入参数重组后的一个更大的数字，要保证重组后的数字仅大于原数字,如`123`会生成`132`，而不会生成`321`，如果没有可重组的更大的数字，则返回`-1`
+8|[乘法口诀](./javascript/cfkj.js)|打印输出9*9乘法口诀表
