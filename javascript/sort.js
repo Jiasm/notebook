@@ -1,6 +1,5 @@
 'use strict'
 
-
 /**
  * 根据多维度进行数据的排序
  * 大致套路如下
@@ -43,7 +42,7 @@ function sort (rules, data) {
    */
   let func = ([[rule, order], ...ruleList], data) => {
     let result = new NodeArray()
-    let mapping = new Map()       // 作为一个去重的参照
+    let mapping = new Map() // 作为一个去重的参照
 
     data.sort(({[rule]: a}, {[rule]: b}) => order === 'desc' ? a < b : a > b).map(({[rule]: key}, index, data) => {
       let arr
@@ -117,10 +116,11 @@ var arr = sort({
   name: 'asc',
   price: 'desc'
 }, data)
-arr.forEach(item => {
-  document.querySelector('#output').innerHTML += `
-    <li>
-    ${JSON.stringify(item, null, 2).replace(/\n/g, '<br/>').replace(/\s/g, '&nbsp;')}
-    </li>
-  `
-})
+console.log(arr)
+// arr.forEach(item => {
+//   document.querySelector('#output').innerHTML += `
+//     <li>
+//     ${JSON.stringify(item, null, 2).replace(/\n/g, '<br/>').replace(/\s/g, '&nbsp;')}
+//     </li>
+//   `
+// })
