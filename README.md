@@ -27,6 +27,7 @@ id|title|description
 id|title|description
 :-:|:-|:-
 1|[一个简单的多段式动画](https://blog.jiasm.org/notebook/html/animation.html)|
+2|[纯CSS实现的多层级菜单栏](https://blog.jiasm.org/notebook/html/deep-child-menu.html)
 
 ## HTML
 
