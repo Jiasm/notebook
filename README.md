@@ -20,7 +20,7 @@ id|title|description
 12|[group-by-some-key](./javascript/translate-tree-data.js)|将一个一维的数组按照某些分组key转换为树形结构
 13|[data-cache](./javascript/data-cache.js)|一个简单的实现数据缓存的函数，可设定缓存时间，数据来源
 14|[char-code-list](./javascript/char-code-list.js)|将字符串全部转换为char-code，无须指定下标。
-15|[array-sync](./array-sync)|部分`array`方法的`async`版本实现：`every`、`some`、`forEach`、`filter`
+15|[array-sync](./array-sync)|部分`array`方法的`async`版本实现：[every](./array-sync/every.js)、[some](./array-sync/some.js)、[forEach](./array-sync/for-each.js)、[filter](./array-sync/filter.js)
 
 ## CSS
 
@@ -33,7 +33,7 @@ id|title|description
 id|title|description
 :-:|:-|:-
 1|[简易的橡皮擦实现](./html/eraser.html)|[Live Demo:](https://blog.jiasm.org/notebook/html/eraser.html) 一个简单的橡皮擦实现效果，使用`canvas`
-2|[设置文本颜色的反色](./html/invert-background-color-2-text-color.html)|[Live Demo:](https://blog.jiasm.org/notebook/html/invert-background-color-2-text-color.html)纯CSS实现文本颜色与背景为反色
+2|[设置文本颜色的反色](./html/invert-background-color-2-text-color.html)|[Live Demo:](https://blog.jiasm.org/notebook/html/invert-background-color-2-text-color.html) 纯CSS实现文本颜色与背景为反色
 
 ## 冷知识
 
