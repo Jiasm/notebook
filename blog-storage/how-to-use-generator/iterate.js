@@ -4,6 +4,6 @@ function * generator () {
   return 3
 }
 
-for (let item of generator) {
+for (let item of generator()) {
   item
 }
