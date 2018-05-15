@@ -40,7 +40,7 @@ id|title|description
 :-:|:-|:-
 1|[ES6默认参数与ES5版的polyfill默认参数在处理时的区别](./docs/default-arguments.md)|ES6默认参数只会命中`undefined`，而之前的ES5版本会命中所有可以转换为`false`的参数
 
-## 面试题
+## 一些有趣的题目
 
 id|title|description
 :-:|:-|:-
@@ -52,3 +52,4 @@ id|title|description
 6|[获取固定数量数字相加的值](./javascript/min-max-sum.js)|获取几个数字相加所得的最小/最大结果
 7|[重组数字后获取一个更大的数字](./javascript/nextbigger.js)|获取由传入参数重组后的一个更大的数字，要保证重组后的数字仅大于原数字,如`123`会生成`132`，而不会生成`321`，如果没有可重组的更大的数字，则返回`-1`
 8|[乘法口诀](./javascript/cfkj.js)|打印输出99乘法口诀表
+9|[移动0元素](./javascript/move-zero.js)|将一个数组内所有 0 元素移动到数组的末尾，并保证其他元素的相对次序保持不变，且 0 元素的排列顺序也与出现顺序一致。<br/>例如有如下数组<br/>[3, 0, 4, 6, "0", 0, 13, "0", 78, 0, 14]<br/>应输出<br/>[3, 4, 6, 13, 78, 14, 0, "0", 0, "0", 0]<br/>限制：<br/>不能使用任何数组或对象作为临时变量<br/>不能使用任何 Array.prototype 和 Object.prototype 上的方法
