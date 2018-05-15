@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Deep child menu demo</title>
+  <style media="screen">
+    * {
+      box-sizing: border-box;
+    }
+
+    .wrap {
+      position: relative;
+    }
+
+    ul,
+    li {
+      position: relative;
+      padding: 0;
+      list-style-type: none;
+    }
+
+    li {
+      width: 160px;
+      padding-left: 20px;
+    }
+
+    ul ul {
+      display: none;
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 2;
+      transform: translateX(100%);
+    }
+
+    ul li:hover>ul,
+    ul:hover {
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <ul>
+      <li>Menu 1</li>
+      <li>Menu 2</li>
+      <li>Menu 3 with Child
+        <ul>
+          <li>Menu 1</li>
+          <li>Menu 2</li>
+          <li>Menu 3 with Child
+            <ul>
+              <li>Menu 1</li>
+              <li>Menu 2 with Child
+                <ul>
+                  <li>Menu 1</li>
+                  <li>Menu 2</li>
+                  <li>Menu 3</li>
+                  <li>Menu 4</li>
+                </ul>
+              </li>
+              <li>Menu 3 with Child
+                <ul>
+                  <li>Menu 1</li>
+                  <li>Menu 2</li>
+                  <li>Menu 3</li>
+                  <li>Menu 4</li>
+                </ul>
+              </li>
+              <li>Menu 4</li>
+            </ul>
+          </li>
+          <li>Menu 4</li>
+        </ul>
+      </li>
+      <li>Menu 4</li>
+    </ul>
+  </div>
+</body>
+
+</html>
