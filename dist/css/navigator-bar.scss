@@ -1,0 +1,82 @@
+/* reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.example {
+  margin: 40px 0;
+  padding: 0 10px;
+}
+
+.example-target {
+  .wrap {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .nav-warp {
+    display: flex;
+    justify-content: flex-start;
+
+    .nav-item {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 120px;
+      height: 30px;
+
+      a {
+        color: blue;
+        text-decoration: none;
+      }
+    }
+  }
+
+  .content-item {
+    width: 600px;
+    height: 200px;
+    border: 1px solid gray;
+    text-align: center;
+    line-height: 200px;
+
+    /* others & block default when some else selected */
+    &, &:target ~ &:last-of-type {
+      display: none;
+    }
+
+    /* default show and selected */
+    &:last-of-type,
+    &:target {
+      display: block;
+    }
+
+    /* each items */
+    @for $i from 1 through 5 {
+      &#content-item#{$i}:target ~ nav ul .nav-item:nth-of-type(#{$i}) {
+        background-color: gray;
+
+        a {
+          color: #fff;
+        }
+      }
+    }
+
+    /* default selected */
+    &:last-of-type ~ nav ul .nav-item:nth-of-type(1) {
+      background-color: gray;
+      a {
+        color: #fff;
+      }
+    }
+
+    /* default block when some item selected */
+    &:target ~ nav ul .nav-item:nth-of-type(1) {
+      background-color: inherit;
+      a {
+        color: blue;
+      }
+    }
+  }
+}

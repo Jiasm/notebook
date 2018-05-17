@@ -1,0 +1,75 @@
+/* reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.example {
+  margin: 40px 0;
+  padding: 0 10px;
+}
+
+.wrap {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.nav-warp {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.nav-item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 30px;
+}
+
+.nav-item a {
+  color: blue;
+  text-decoration: none;
+}
+
+.content-item,
+.content-item:target ~ .content-item:last-of-type {
+  display: none;
+  width: 600px;
+  height: 200px;
+  border: 1px solid gray;
+  text-align: center;
+  line-height: 200px;
+}
+
+.content-item:last-of-type,
+.content-item:target {
+  display: block;
+}
+
+.content-item#content-item1:target ~ nav ul .nav-item:nth-of-type(1),
+.content-item#content-item2:target ~ nav ul .nav-item:nth-of-type(2),
+.content-item#content-item3:target ~ nav ul .nav-item:nth-of-type(3),
+.content-item#content-item4:target ~ nav ul .nav-item:nth-of-type(4),
+.content-item#content-item5:target ~ nav ul .nav-item:nth-of-type(5),
+.content-item:last-of-type ~ nav ul .nav-item:nth-of-type(1) {
+  background-color: gray;
+}
+
+.content-item#content-item1:target ~ nav ul .nav-item:nth-of-type(1) a,
+.content-item#content-item2:target ~ nav ul .nav-item:nth-of-type(2) a,
+.content-item#content-item3:target ~ nav ul .nav-item:nth-of-type(3) a,
+.content-item#content-item4:target ~ nav ul .nav-item:nth-of-type(4) a,
+.content-item#content-item5:target ~ nav ul .nav-item:nth-of-type(5) a,
+.content-item:last-of-type ~ nav ul .nav-item:first-of-type a {
+  color: #fff;
+}
+/* default block */
+.content-item:target ~ nav ul .nav-item:nth-of-type(1) {
+  background-color: inherit;
+}
+
+.content-item:target ~ nav ul .nav-item:nth-of-type(1) a {
+  color: blue;
+}
