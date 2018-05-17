@@ -21,6 +21,7 @@
   justify-content: center;
   width: 120px;
   height: 30px;
+  cursor: pointer;
 }
 
 .example .nav-warp .nav-item a {
