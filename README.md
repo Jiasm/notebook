@@ -28,13 +28,13 @@ id|title|description
 :-:|:-|:-
 1|[一个简单的多段式动画](./html/animation.html)|[Live Demo: ](https://blog.jiasm.org/notebook/html/animation.html)
 2|[纯CSS实现的多层级菜单栏](./html/deep-child-menu.html)|[Live Demo: ](https://blog.jiasm.org/notebook/html/deep-child-menu.html)
-3|[设置文本颜色的反色](./html/invert-background-color-2-text-color.html)|[Live Demo: ](https://blog.jiasm.org/notebook/html/invert-background-color-2-text-color.html) 纯CSS实现文本颜色与背景为反色
+3|[纯CSS实现文本颜色与背景为反色](./html/invert-background-color-2-text-color.html)|[Live Demo: ](https://blog.jiasm.org/notebook/html/invert-background-color-2-text-color.html) 纯CSS实现文本颜色与背景为反色
 
 ## HTML
 
 id|title|description
 :-:|:-|:-
-1|[简易的橡皮擦实现](./html/eraser.html)|[Live Demo:](https://blog.jiasm.org/notebook/html/eraser.html) 一个简单的橡皮擦实现效果，使用`canvas`
+1|[简易的橡皮擦实现](./html/eraser.html)|[Live Demo:](https://blog.jiasm.org/notebook/html/eraser.html) *(也可以认为是刮刮乐)* 一个简单的橡皮擦实现效果，使用`canvas`
 
 ## 冷知识
 
