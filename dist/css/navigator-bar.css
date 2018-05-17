@@ -10,17 +10,12 @@
   padding: 0 10px;
 }
 
-.wrap {
-  display: flex;
-  flex-direction: column-reverse;
-}
-
-.nav-warp {
+.example .nav-warp {
   display: flex;
   justify-content: flex-start;
 }
 
-.nav-item {
+.example .nav-warp .nav-item {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -28,14 +23,12 @@
   height: 30px;
 }
 
-.nav-item a {
+.example .nav-warp .nav-item a {
   color: blue;
   text-decoration: none;
 }
 
-.content-item,
-.content-item:target ~ .content-item:last-of-type {
-  display: none;
+.example .content-item {
   width: 600px;
   height: 200px;
   border: 1px solid gray;
@@ -43,33 +36,160 @@
   line-height: 200px;
 }
 
-.content-item:last-of-type,
-.content-item:target {
+.example-target .wrap {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.example-target .content-item {
+  /* others & block default when some else selected */
+  /* default show and selected */
+  /* each items */
+  /* default selected */
+  /* default block when some item selected */
+  ;
+}
+
+.example-target .content-item,
+.example-target .content-item:target ~ .content-item:last-of-type {
+  display: none;
+}
+
+.example-target .content-item:last-of-type,
+.example-target .content-item:target {
   display: block;
 }
 
-.content-item#content-item1:target ~ nav ul .nav-item:nth-of-type(1),
-.content-item#content-item2:target ~ nav ul .nav-item:nth-of-type(2),
-.content-item#content-item3:target ~ nav ul .nav-item:nth-of-type(3),
-.content-item#content-item4:target ~ nav ul .nav-item:nth-of-type(4),
-.content-item#content-item5:target ~ nav ul .nav-item:nth-of-type(5),
-.content-item:last-of-type ~ nav ul .nav-item:nth-of-type(1) {
+.example-target .content-item#content-item1:target ~ nav ul .nav-item:nth-of-type(1) {
   background-color: gray;
 }
 
-.content-item#content-item1:target ~ nav ul .nav-item:nth-of-type(1) a,
-.content-item#content-item2:target ~ nav ul .nav-item:nth-of-type(2) a,
-.content-item#content-item3:target ~ nav ul .nav-item:nth-of-type(3) a,
-.content-item#content-item4:target ~ nav ul .nav-item:nth-of-type(4) a,
-.content-item#content-item5:target ~ nav ul .nav-item:nth-of-type(5) a,
-.content-item:last-of-type ~ nav ul .nav-item:first-of-type a {
+.example-target .content-item#content-item1:target ~ nav ul .nav-item:nth-of-type(1) a {
   color: #fff;
 }
-/* default block */
-.content-item:target ~ nav ul .nav-item:nth-of-type(1) {
+
+.example-target .content-item#content-item2:target ~ nav ul .nav-item:nth-of-type(2) {
+  background-color: gray;
+}
+
+.example-target .content-item#content-item2:target ~ nav ul .nav-item:nth-of-type(2) a {
+  color: #fff;
+}
+
+.example-target .content-item#content-item3:target ~ nav ul .nav-item:nth-of-type(3) {
+  background-color: gray;
+}
+
+.example-target .content-item#content-item3:target ~ nav ul .nav-item:nth-of-type(3) a {
+  color: #fff;
+}
+
+.example-target .content-item#content-item4:target ~ nav ul .nav-item:nth-of-type(4) {
+  background-color: gray;
+}
+
+.example-target .content-item#content-item4:target ~ nav ul .nav-item:nth-of-type(4) a {
+  color: #fff;
+}
+
+.example-target .content-item#content-item5:target ~ nav ul .nav-item:nth-of-type(5) {
+  background-color: gray;
+}
+
+.example-target .content-item#content-item5:target ~ nav ul .nav-item:nth-of-type(5) a {
+  color: #fff;
+}
+
+.example-target .content-item:last-of-type ~ nav ul .nav-item:nth-of-type(1) {
+  background-color: gray;
+}
+
+.example-target .content-item:last-of-type ~ nav ul .nav-item:nth-of-type(1) a {
+  color: #fff;
+}
+
+.example-target .content-item:target ~ nav ul .nav-item:nth-of-type(1) {
   background-color: inherit;
 }
 
-.content-item:target ~ nav ul .nav-item:nth-of-type(1) a {
+.example-target .content-item:target ~ nav ul .nav-item:nth-of-type(1) a {
+  color: blue;
+}
+
+.example-label .radios {
+  display: none;
+  /* each items */
+  ;
+}
+
+.example-label .radios:checked {
+  color: red;
+}
+
+.example-label .radios#label-1:checked ~ nav ul .nav-item:nth-of-type(1) {
+  background-color: gray;
+}
+
+.example-label .radios#label-1:checked ~ nav ul .nav-item:nth-of-type(1) label {
+  color: #fff;
+}
+
+.example-label .radios#label-1:checked ~ .content-item:nth-of-type(1) {
+  display: block;
+}
+
+.example-label .radios#label-2:checked ~ nav ul .nav-item:nth-of-type(2) {
+  background-color: gray;
+}
+
+.example-label .radios#label-2:checked ~ nav ul .nav-item:nth-of-type(2) label {
+  color: #fff;
+}
+
+.example-label .radios#label-2:checked ~ .content-item:nth-of-type(2) {
+  display: block;
+}
+
+.example-label .radios#label-3:checked ~ nav ul .nav-item:nth-of-type(3) {
+  background-color: gray;
+}
+
+.example-label .radios#label-3:checked ~ nav ul .nav-item:nth-of-type(3) label {
+  color: #fff;
+}
+
+.example-label .radios#label-3:checked ~ .content-item:nth-of-type(3) {
+  display: block;
+}
+
+.example-label .radios#label-4:checked ~ nav ul .nav-item:nth-of-type(4) {
+  background-color: gray;
+}
+
+.example-label .radios#label-4:checked ~ nav ul .nav-item:nth-of-type(4) label {
+  color: #fff;
+}
+
+.example-label .radios#label-4:checked ~ .content-item:nth-of-type(4) {
+  display: block;
+}
+
+.example-label .radios#label-5:checked ~ nav ul .nav-item:nth-of-type(5) {
+  background-color: gray;
+}
+
+.example-label .radios#label-5:checked ~ nav ul .nav-item:nth-of-type(5) label {
+  color: #fff;
+}
+
+.example-label .radios#label-5:checked ~ .content-item:nth-of-type(5) {
+  display: block;
+}
+
+.example-label .content-item {
+  display: none;
+}
+
+.example-label label {
   color: blue;
 }

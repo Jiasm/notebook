@@ -8,13 +8,6 @@
 .example {
   margin: 40px 0;
   padding: 0 10px;
-}
-
-.example-target {
-  .wrap {
-    display: flex;
-    flex-direction: column-reverse;
-  }
 
   .nav-warp {
     display: flex;
@@ -40,9 +33,18 @@
     border: 1px solid gray;
     text-align: center;
     line-height: 200px;
+  }
+}
 
+.example-target {
+  .wrap {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .content-item {
     /* others & block default when some else selected */
-    &, &:target ~ &:last-of-type {
+    &, &:target ~ .content-item:last-of-type {
       display: none;
     }
 
@@ -78,5 +80,40 @@
         color: blue;
       }
     }
+  }
+}
+
+.example-label {
+  .radios {
+    display: none;
+
+    &:checked {
+      color: red;
+    }
+
+    /* each items */
+    @for $i from 1 through 5 {
+      &#label-#{$i}:checked ~ {
+        & nav ul .nav-item:nth-of-type(#{$i}) {
+          background-color: gray;
+
+          label {
+            color: #fff;
+          }
+        }
+
+        & .content-item:nth-of-type(#{$i}) {
+          display: block;
+        }
+      }
+    }
+  }
+
+  .content-item {
+    display: none;
+  }
+
+  label {
+    color: blue;
   }
 }
