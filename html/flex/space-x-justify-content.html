@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>flex - justify-content example</title>
+  <style media="screen">
+    .container {
+      display: flex;
+      width: 400px;
+
+      color: #fff;
+      border: 1px solid #03a9f4;
+    }
+
+    .between {
+      justify-content: space-between;
+    }
+
+    .around {
+      justify-content: space-around;
+    }
+
+    .evenly {
+      justify-content: space-evenly;
+    }
+
+    .item {
+      width: 100px;
+
+      text-align: center;
+      background: #03a9f4;
+    }
+  </style>
+</head>
+
+<body>
+  <p>space-between</p>
+  <div class="container between">
+    <div class="item">Item 1</div>
+    <div class="item">Item 2</div>
+    <div class="item">Item 3</div>
+  </div>
+  <p>space-around</p>
+  <div class="container around">
+    <div class="item">Item 1</div>
+    <div class="item">Item 2</div>
+    <div class="item">Item 3</div>
+  </div>
+  <p>space-evenly</p>
+  <div class="container evenly">
+    <div class="item">Item 1</div>
+    <div class="item">Item 2</div>
+    <div class="item">Item 3</div>
+  </div>
+</body>
+
+</html>
