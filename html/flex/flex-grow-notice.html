@@ -3,21 +3,34 @@
 
 <head>
   <meta charset="utf-8">
-  <title>flex - simple example</title>
+  <title>flex - flex-grow notice example</title>
   <style media="screen">
     .container {
       display: flex;
-      height: 50px;
+      width: 160px;
+      height: 20px;
+      align-items: stretch;
 
       color: #fff;
       border: 1px solid #03a9f4;
     }
 
     .item {
-      flex: 1;
+      flex-grow: 1;
+      padding-left: 20px;
 
+      font-size: 0;
       text-align: center;
       background: #03a9f4;
+    }
+
+    .item:first-of-type {
+      flex-grow: 2;
+      background-color: #009688;
+    }
+
+    .item:last-of-type {
+      background-color: #ffc107;
     }
   </style>
 </head>
@@ -26,6 +39,7 @@
   <div class="container">
     <div class="item">Item 1</div>
     <div class="item">Item 2</div>
+    <div class="item">Item 3</div>
   </div>
 </body>
 

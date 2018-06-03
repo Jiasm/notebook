@@ -3,29 +3,32 @@
 
 <head>
   <meta charset="utf-8">
-  <title>flex - space-x-justify-content example</title>
+  <title>flex - align-content example</title>
   <style media="screen">
     .container {
       display: flex;
-      width: 400px;
+      flex-wrap: wrap;
+      width: 200px;
+      height: 80px;
 
       color: #fff;
       border: 1px solid #03a9f4;
     }
 
     .between {
-      justify-content: space-between;
+      align-content: space-between;
     }
 
     .around {
-      justify-content: space-around;
+      align-content: space-around;
     }
 
     .evenly {
-      justify-content: space-evenly;
+      align-content: space-evenly;
     }
 
     .item {
+      /* flex: 1; */
       width: 100px;
 
       text-align: center;
@@ -40,18 +43,24 @@
     <div class="item">Item 1</div>
     <div class="item">Item 2</div>
     <div class="item">Item 3</div>
+    <div class="item">Item 4</div>
+    <div class="item">Item 5</div>
   </div>
-  <p>space-around</p>
+  <p>space-aroud</p>
   <div class="container around">
     <div class="item">Item 1</div>
     <div class="item">Item 2</div>
     <div class="item">Item 3</div>
+    <div class="item">Item 4</div>
+    <div class="item">Item 5</div>
   </div>
   <p>space-evenly</p>
   <div class="container evenly">
     <div class="item">Item 1</div>
     <div class="item">Item 2</div>
     <div class="item">Item 3</div>
+    <div class="item">Item 4</div>
+    <div class="item">Item 5</div>
   </div>
 </body>
 

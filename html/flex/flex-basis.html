@@ -3,21 +3,35 @@
 
 <head>
   <meta charset="utf-8">
-  <title>flex - simple example</title>
+  <title>flex - flex-basis example</title>
   <style media="screen">
     .container {
       display: flex;
-      height: 50px;
+      width: 120px;
+      height: 20px;
+      align-items: stretch;
 
       color: #fff;
       border: 1px solid #03a9f4;
     }
 
     .item {
-      flex: 1;
+      width: 25px;
+      flex-grow: 1;
 
+      font-size: 0;
       text-align: center;
       background: #03a9f4;
+    }
+
+    .item:first-of-type {
+      flex-basis: 40px;
+      /* flex-grow: 0; */
+      background-color: #009688;
+    }
+
+    .item:last-of-type {
+      background-color: #ffc107;
     }
   </style>
 </head>
@@ -26,6 +40,7 @@
   <div class="container">
     <div class="item">Item 1</div>
     <div class="item">Item 2</div>
+    <div class="item">Item 3</div>
   </div>
 </body>
 

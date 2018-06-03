@@ -3,26 +3,43 @@
 
 <head>
   <meta charset="utf-8">
-  <title>flex - justify-content example</title>
+  <title>flex - align-items example</title>
   <style media="screen">
     .container {
       display: flex;
       width: 400px;
+      height: 50px;
 
       color: #fff;
       border: 1px solid #03a9f4;
     }
 
     .center {
-      justify-content: center;
+      align-items: center;
     }
 
     .flex-start {
-      justify-content: flex-start;
+      align-items: flex-start;
     }
 
     .flex-end {
-      justify-content: flex-end;
+      align-items: flex-end;
+    }
+
+    .stretch {
+      align-items: stretch;
+    }
+
+    .baseline {
+      align-items: baseline;
+    }
+
+    .baseline .item:nth-of-type(1) {
+      font-size: 14px;
+    }
+
+    .baseline .item:nth-of-type(3) {
+      font-size: 20px;
     }
 
     .item {
@@ -50,6 +67,18 @@
   </div>
   <p>flex-end</p>
   <div class="container flex-end">
+    <div class="item">Item 1</div>
+    <div class="item">Item 2</div>
+    <div class="item">Item 3</div>
+  </div>
+  <p>stretch</p>
+  <div class="container stretch">
+    <div class="item">Item 1</div>
+    <div class="item">Item 2</div>
+    <div class="item">Item 3</div>
+  </div>
+  <p>baseline</p>
+  <div class="container baseline">
     <div class="item">Item 1</div>
     <div class="item">Item 2</div>
     <div class="item">Item 3</div>

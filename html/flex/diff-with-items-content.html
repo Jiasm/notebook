@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>flex - align-content example</title>
+  <style media="screen">
+    .wrap {
+      display: flex;
+    }
+
+    .example-items {
+      margin-left: 2em;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      width: 200px;
+      height: 80px;
+
+      color: #fff;
+      border: 1px solid #03a9f4;
+    }
+
+    .example-content .center {
+      align-content: center;
+    }
+
+    .example-content .flex-start {
+      align-content: flex-start;
+    }
+
+    .example-content .flex-end {
+      align-content: flex-end;
+    }
+
+    .example-items .center {
+      align-items: center;
+    }
+
+    .example-items .flex-start {
+      align-items: flex-start;
+    }
+
+    .example-items .flex-end {
+      align-items: flex-end;
+    }
+
+    .item {
+      /* flex: 1; */
+      width: 100px;
+
+      text-align: center;
+      background: #03a9f4;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="example-content">
+      <p>align-content</p>
+      <p>center</p>
+      <div class="container center">
+        <div class="item">Item 1</div>
+        <div class="item">Item 2</div>
+        <div class="item">Item 3</div>
+        <div class="item">Item 4</div>
+        <div class="item">Item 5</div>
+      </div>
+      <p>flex-start</p>
+      <div class="container flex-start">
+        <div class="item">Item 1</div>
+        <div class="item">Item 2</div>
+        <div class="item">Item 3</div>
+        <div class="item">Item 4</div>
+        <div class="item">Item 5</div>
+      </div>
+      <p>flex-end</p>
+      <div class="container flex-end">
+        <div class="item">Item 1</div>
+        <div class="item">Item 2</div>
+        <div class="item">Item 3</div>
+        <div class="item">Item 4</div>
+        <div class="item">Item 5</div>
+      </div>
+    </div>
+    <div class="example-items">
+      <p>align-items</p>
+      <p>center</p>
+      <div class="container center">
+        <div class="item">Item 1</div>
+        <div class="item">Item 2</div>
+        <div class="item">Item 3</div>
+        <div class="item">Item 4</div>
+        <div class="item">Item 5</div>
+      </div>
+      <p>flex-start</p>
+      <div class="container flex-start">
+        <div class="item">Item 1</div>
+        <div class="item">Item 2</div>
+        <div class="item">Item 3</div>
+        <div class="item">Item 4</div>
+        <div class="item">Item 5</div>
+      </div>
+      <p>flex-end</p>
+      <div class="container flex-end">
+        <div class="item">Item 1</div>
+        <div class="item">Item 2</div>
+        <div class="item">Item 3</div>
+        <div class="item">Item 4</div>
+        <div class="item">Item 5</div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
