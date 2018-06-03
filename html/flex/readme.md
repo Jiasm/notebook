@@ -5,7 +5,7 @@ Blog: https://blog.jiasm.org/2018/06/03/Flex入坑指南/
 ### 导航
 
 code|online demo
-:-:|:-:
+:--|:-:
 [simple](./simple.html)|[demo](https://blog.jiasm.org/notebook/html/flex/simple.html)
 [flex-wrap](./flex-wrap.html)|[demo](https://blog.jiasm.org/notebook/html/flex/flex-wrap.html)
 [justify-content](./justify-content.html)|[demo](https://blog.jiasm.org/notebook/html/flex/justify-content.html)
