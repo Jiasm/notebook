@@ -3,7 +3,7 @@
 ### Navigator
 
 1. [Flex入坑指南](#Flex入坑指南)
-2. [纯CSS实现的tabbar切换（`:target`与`label + input`两种实现方式）](#纯CSS实现的tabbar切换（`:target`与`label + input`两种实现方式）)
+2. [纯CSS实现的tabbar切换](#纯CSS实现的tabbar切换)
 3. [纯CSS实现文本颜色与背景为反色](#纯CSS实现文本颜色与背景为反色)
 4. [纯CSS实现的多层级菜单栏](#纯CSS实现的多层级菜单栏)
 
@@ -16,8 +16,9 @@
 
 `Flex`相关属性的基本用法，以及一些需要注意的小细节（`grow`的取值、`align-items`与`align-content`的区别）  
 
-#### 纯CSS实现的tabbar切换（`:target`与`label + input`两种实现方式）
+#### 纯CSS实现的tabbar切换
 
+> （`:target`与`label + input`两种实现方式）  
 > [源码](./dist/css/navigator-bar.scss)  
 > [Live Demo](https://blog.jiasm.org/notebook/html/pure-css-tab-bar.html)
 
