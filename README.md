@@ -1,6 +1,6 @@
 # :notebook: notebook
 
-> 收集平时的一些小代码片段
+> 前端、Node相关笔记，部分奇葩面试题
 
 ## JavaScript
 
