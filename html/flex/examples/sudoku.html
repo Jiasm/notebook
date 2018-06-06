@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Example - sudoku</title>
+  <style media="screen">
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      width: 300px;
+      border: 1px solid #2196F3;
+    }
+
+    .item {
+      position: relative;
+      width: 33.33%;
+      height: auto;
+    }
+
+    .item::before {
+      content: '';
+      display: block;
+      position: relative;
+      width: 100%;
+      padding-top: 100%;
+    }
+
+    .item-content {
+      display: flex;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      align-items: center;
+      justify-content: center;
+      background-color: #8BC34A;
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <p>Basic</p>
+    <div class="container">
+      <div class="item">
+        <div class="item-content">Item 1</div>
+      </div>
+      <div class="item">
+        <div class="item-content">Item 2</div>
+      </div>
+      <div class="item">
+        <div class="item-content">Item 3</div>
+      </div>
+      <div class="item">
+        <div class="item-content">Item 4</div>
+      </div>
+      <div class="item">
+        <div class="item-content">Item 5</div>
+      </div>
+      <div class="item">
+        <div class="item-content">Item 6</div>
+      </div>
+      <div class="item">
+        <div class="item-content">Item 7</div>
+      </div>
+      <div class="item">
+        <div class="item-content">Item 8</div>
+      </div>
+      <div class="item">
+        <div class="item-content">Item 9</div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
