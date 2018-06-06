@@ -22,6 +22,24 @@
 > [源码](./dist/css/navigator-bar.scss)  
 > [Live Demo](https://blog.jiasm.org/notebook/html/pure-css-tab-bar.html)
 
+我们要实现一个纯CSS打造的tab切换，首先我们需要有这样一个结构的元素：
+```html
+<div class="container">
+  <div class="nav">
+    Nav 1
+  </div>
+  <div class="nav">
+    Nav 2
+  </div>
+  <div class="content">
+    Content 1
+  </div>
+  <div class="content">
+    Content 2
+  </div>
+</div>
+```
+
 #### 纯CSS实现文本颜色与背景为反色
 
 > [源码](./html/invert-background-color-2-text-color.html)  
