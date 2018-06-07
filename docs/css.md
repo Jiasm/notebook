@@ -261,7 +261,8 @@
   padding: ($gap / 2);
 }
 ```
-在容器层也添加了`5px`的间隙，这样就能保证`item`所有的间隔均为`10px`了，一个九宫格，done。
+在容器层也添加了`5px`的间隙，这样就能保证`item`所有的间隔均为`10px`了，一个九宫格，done。  
+![](./dist/img/example-sudoku.png)
 
 ### Just Demos
 
