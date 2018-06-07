@@ -42,6 +42,21 @@
 </div>
 ```
 上边的元素是`tab`选项卡的按钮，下边的为选项卡对应的内容。  
+以及对应的CSS样式大致如下：
+```css
+.nav-wrap {
+  display: flex;
+}
+
+.nav {
+  flex: 1 1 auto;
+}
+
+/* 默认隐藏所有的内容 */
+.content {
+  display: none;
+}
+```
 
 ##### label+input的实现方式
 
