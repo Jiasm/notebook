@@ -24,17 +24,19 @@
 
 我们要实现一个纯CSS打造的tab切换，首先我们需要有这样一个结构的元素：
 ```html
-<div class="container">
+<div class="nav-wrap">
   <div class="nav">
     Nav 1
   </div>
   <div class="nav">
     Nav 2
   </div>
-  <div class="content">
+</div>
+<div class="container">
+  <div class="content" data-index="1">
     Content 1
   </div>
-  <div class="content">
+  <div class="content" data-index="2">
     Content 2
   </div>
 </div>
