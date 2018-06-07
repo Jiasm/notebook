@@ -107,28 +107,28 @@
 则当前`:target`表示为`#name`，也就是我们熟悉的ID选择器了。  
 
 所以，与上边的`label+input`版本的区别就在于，我们将`input`替换为一个空的携带ID的元素，或者直在对应的`content`元素上设置ID。  
-*为了与上边的示例看起来接近，所以这里采用空元素控制的方式，源码中使用的是设置content的ID*  
+*我们这里采用的是直接使用content元素+ID的方式，所以对结构进行如下修改*  
 
 ```html
-<div class="empty" id="tab-1" />
-<div class="empty" id="tab-2" />
-<div class="nav-wrap">
-  <div class="nav" data-index="1">
-    <a href="#tab-1">Nav 1</a>
-  </div>
-  <div class="nav" data-index="2">
-    <a href="#tab-2">Nav 2</a>
-  </div>
-</div>
 <div class="container">
-  <div class="content" data-index="1">
+  <div class="content" id="tab-1">
     Content 1
   </div>
-  <div class="content" data-index="2">
+  <div class="content" id="tab-2">
     Content 2
+  </div>
+  <div class="nav-wrap">
+    <div class="nav" data-index="1">
+      <a href="#tab-1">Nav 1</a>
+    </div>
+    <div class="nav" data-index="2">
+      <a href="#tab-2">Nav 2</a>
+    </div>
   </div>
 </div>
 ```
+
+当我们点击
 
 
 #### 纯CSS实现文本颜色与背景为反色
