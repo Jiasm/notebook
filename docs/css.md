@@ -173,6 +173,96 @@
 
 ![](/dist/img/example-pure-css-tabbar.gif)
 
+#### 一个标准的九宫格实现
+
+> [源码](./html/flex/examples/sudoku.html)
+> [Live Demo](https://blog.jiasm.org/notebook/html/flex/examples/sudoku)
+
+使用`flex`相关属性来实现一个响应式的九宫格样式。  
+
+首先，需要如下结构的`html`：  
+```html
+<div class="container">
+  <div class="item">
+    <div class="item-content">Item 1</div>
+  </div>
+  <!-- ... -->
+  <div class="item">
+    <div class="item-content">Item 9</div>
+  </div>
+</div>
+```
+
+然后是要实现的需求：
+1. 九宫格，每行三个
+2. 每格的宽高一致，均为正方形
+3. 单元格之间的间隙相等，为`10px`
+
+首先为了实现每行三个元素，我们使用`flex + flex-wrap`。  
+```css
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.item {
+  width: 33.33%;
+}
+```
+
+上边的设置已经实现了每行填充三个，但是这时候我们并没有对`item`设置高度。  
+这里就用到了`padding-top`，在文档中定义了，`padding`属性的百分比取值为父容器的`width`。  
+所以，我们使用`padding-top: 100%`就可以变相的获取到宽度，并用之撑开容器，得到一个正方形。  
+
+```css
+.item::before {
+  content: '';
+  display: block;
+  padding-top: 100%;
+}
+```
+
+这时的元素依然会很诡异，因为`::before`在撑开元素的同时，也在元素中占据了一部分空间。  
+导致我们的内容被挤到了下边，为了解决这个问题，我们需要将内容元素设置为`absolute`并悬浮在`item`上。  
+```css
+.container {
+  position: relative; /* 避免子元素absolute定位脱离容器 */
+}
+.item .item-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #8BC34A;
+}
+```
+
+这样我们就得到了九个正方形，每行三个。  
+以及只剩下最后一个问题，如何实现单元格的间隙相等，保证为`10px`？  
+因为我们上边为了保证一行三个元素，宽度写死了`33.33%`，这个是不能修改的。  
+所以我们要用一个取巧的方式。
+```css
+.item .item-content {
+  $gap: 10px;
+
+  top: ($gap / 2);
+  left: ($gap / 2);
+  right: ($gap / 2);
+  bottom: ($gap / 2);
+}
+```
+对每个元素都设置`5px`的间隙。  
+这样确实在元素中间都能过出现`10px`的间隙，但是在容器的外层一圈却只有`5px`间隙。  
+所以我们还要对容器进行如下修改：  
+```css
+.container {
+  $gap: 10px;
+
+  padding: ($gap / 2);
+}
+```
+在容器层也添加了`5px`的间隙，这样就能保证`item`所有的间隔均为`10px`了，一个九宫格，done。
+
 ### Just Demos
 
 #### 纯CSS实现文本颜色与背景为反色
