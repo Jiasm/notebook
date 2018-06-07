@@ -99,6 +99,37 @@
 }
 ```
 
+如果我们要实现第一个`tab`默认选中，仅需要将第一个`tab`对应的`input`设为`checked`即可`<input type="radio" checked />`  
+
+##### :target的实现方式
+
+`:target`是一个新的伪选择器，这个值代表了当前URL中的`hash`，也就是说，如果URL为`baidu.com/#name`  
+则当前`:target`表示为`#name`，也就是我们熟悉的ID选择器了。  
+
+所以，与上边的`label+input`版本的区别就在于，我们将`input`替换为一个空的携带ID的元素，或者直在对应的`content`元素上设置ID。  
+*为了与上边的示例看起来接近，所以这里采用空元素控制的方式，源码中使用的是设置content的ID*  
+
+```html
+<div class="empty" id="tab-1" />
+<div class="empty" id="tab-2" />
+<div class="nav-wrap">
+  <div class="nav" data-index="1">
+    <a href="#tab-1">Nav 1</a>
+  </div>
+  <div class="nav" data-index="2">
+    <a href="#tab-2">Nav 2</a>
+  </div>
+</div>
+<div class="container">
+  <div class="content" data-index="1">
+    Content 1
+  </div>
+  <div class="content" data-index="2">
+    Content 2
+  </div>
+</div>
+```
+
 
 #### 纯CSS实现文本颜色与背景为反色
 
