@@ -46,9 +46,43 @@
 ##### label+input的实现方式
 
 这里说的`input`是指`<input type="radio" />`，`radio`是单选框，所以比较符合我们的需求。  
-所以我们要对上边的结构进行如下修改：
+所以我们要对上边的结构进行如下修改；
 首先，是在`tab`选项卡按钮上添加`label`元素，以便可以在点击的时候选中对应的`input`。  
 *P.S. 不直接在nav里边写input的原因是，nav通过CSS选择器的方式无法与下边的content产生联系*  
+
+所以修改后的结构如下：  
+```html
+<input id="tab-1" type="radio" />
+<input id="tab-2" type="radio" />
+<div class="nav-wrap">
+  <div class="nav" data-index="1">
+    <label for="tab-1">Nav 1</label>
+  </div>
+  <div class="nav" data-index="2">
+    <label for="tab-2">Nav 2</label>
+  </div>
+</div>
+<div class="container">
+  <div class="content" data-index="1">
+    Content 1
+  </div>
+  <div class="content" data-index="2">
+    Content 2
+  </div>
+</div>
+```
+
+然后我们就可以在CSS中这样写选择器了：
+```css
+#tab-1:checked ~ .nav-wrap .nav[data-index="1"] {
+  background-color: gray;
+  color: #fff;
+}
+
+#tab-1:checked ~ .container .content[data-index="1"] {
+  display: block;
+}
+```
 
 
 #### 纯CSS实现文本颜色与背景为反色
