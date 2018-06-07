@@ -178,7 +178,7 @@
 > [源码](./html/invert-background-color-2-text-color.html)  
 > [Live Demo](https://blog.jiasm.org/notebook/html/invert-background-color-2-text-color.html)
 
-#### 纯CSS实现的多层级菜单栏
+#### 纯CSS实现的多层级悬浮菜单栏
 
 > [源码](./html/deep-child-menu.html)  
 > [Live Demo](https://blog.jiasm.org/notebook/html/deep-child-menu.html)
