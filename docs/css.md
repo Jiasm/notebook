@@ -111,11 +111,11 @@
 
 ```html
 <div class="container">
-  <div class="content" id="tab-1">
-    Content 1
-  </div>
   <div class="content" id="tab-2">
     Content 2
+  </div>
+  <div class="content" id="tab-1">
+    Content 1
   </div>
   <div class="nav-wrap">
     <div class="nav" data-index="1">
@@ -128,8 +128,50 @@
 </div>
 ```
 
-当我们点击
+因为包含ID的元素必然要写在DOM树的前边，因为只有`~`选择器，并没有反向的。  
+但是在用户看来，一定还是要是正常的，所以这里刚好用到了一个`flex`的属性。
+这样会将所有的元素进行反排。
+```css
+.container {
+  flex-direction: column-reverse;
+}
+```
 
+同样是因为只有`~`选择器，所以我们在没有`:target`的时候要显示第一个`content`，但这时如果URL中的hash进行了改变，如何禁用掉这个默认值就成为了一个问题。
+
+所以，我们还需要将所用的`content`进行倒序输出，这是为了能够填充默认值，默认显示第一个`content`。  
+
+这样我们在实际DOM中的默认勾选`content`为最后一个，而只要`:target`后边可以匹配到`content`，都可以在这里禁用掉默认值的处理。  
+代码如下：
+
+```css
+.container {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+/* default value */
+.content:first-of-type {
+  display: block;
+}
+
+.content:first-of-type ~ .nav-wrap .nav[data-index="1"] {
+  background-color: gray;
+  color: #fff;
+}
+
+/* disable default value */
+.content:target ~ .content:first-of-type {
+  display: none;
+}
+
+.content:target ~ .nav-wrap .nav[data-index="1"] {
+  background-color: inherit;
+  color: inherit;
+}
+```
+
+![](/dist/img/example-pure-css-tabbar.gif)
 
 #### 纯CSS实现文本颜色与背景为反色
 
