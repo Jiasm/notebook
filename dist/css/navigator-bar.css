@@ -30,7 +30,7 @@
 }
 
 .example .content-item {
-  width: 600px;
+  width: 100%;
   height: 200px;
   border: 1px solid gray;
   text-align: center;
@@ -48,7 +48,6 @@
   /* each items */
   /* default selected */
   /* default block when some item selected */
-  ;
 }
 
 .example-target .content-item,
@@ -120,7 +119,6 @@
 .example-label .radios {
   display: none;
   /* each items */
-  ;
 }
 
 .example-label .radios:checked {
