@@ -12,3 +12,33 @@ function func (name = requireVariable('name')) { }
 
 func() // throw error `variable [name] is required`
 ```
+
+`ES6`中的函数参数默认值为惰性执行的代码，只有在没有传递该参数时才会执行对应的表达式，所以只要调用函数时没有传入`name`参数，就会触发默认参数的逻辑，并`throw Error`。  
+
+### 如何让传入setInterval的函数立马被执行
+
+相信大家都会遇到类似这样的代码：
+```javascript
+function func() {}
+
+// 触发函数
+func()
+
+// 定时每秒执行一次函数
+setInterval(func, 1000)
+```
+
+我们需要这样的一个工具函数来帮助我们实现需求：
+```javascript
+function runner (func) {
+  return (func(), func)
+}
+
+function func() {
+  console.log('trigger')
+}
+
+setInterval(runner(func), 1000)
+```
+
+善用`,`逗号操作符能够很轻易的实现我们所需要的逻辑，一个`,`逗号操作符的意义在于，依次执行`,`逗号左侧的表达式，并返回最后一个表达式的值。
