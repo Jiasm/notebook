@@ -17,7 +17,7 @@ func() // throw error `variable [name] is required`
 
 ### 如何让传入setInterval的函数立马被执行
 
-相信大家都会遇到类似这样的代码：
+如果大家遇到过类似这样的代码，并且想写的更简洁一些（删掉那一行手动的函数调用）：
 ```javascript
 function func() {}
 
