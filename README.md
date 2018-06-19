@@ -19,4 +19,6 @@
 
 ### [冷知识](/docs/tricks.md)
 
+### [一些实用的技巧](/docs/useful.md)
+
 ### [一些有趣的题目](/docs/interview.md)
