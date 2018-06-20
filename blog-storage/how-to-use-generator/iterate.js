@@ -7,3 +7,4 @@ function * generator () {
 for (let item of generator()) {
   item
 }
+// > 1 2
