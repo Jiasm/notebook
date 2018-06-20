@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Example</title>
+  <style media="screen">
+    #img {
+      height: 50px;
+      width: 50px;
+      border: 1px solid red;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="wrap">
+    <img id="img" />
+  </div>
+  <script type="text/javascript">
+      let $div = document.querySelector('#wrap')
+      let $img = document.querySelector('#img')
+      let $body = document.body
+      $div.addEventListener('click', _ => console.log('div'))
+      $img.addEventListener('click', _ => console.log('img'))
+      $body.addEventListener('click', _ => console.log('body'), true)
+    </script>
+</body>
+
+</html>
