@@ -18,6 +18,8 @@ func main() {
 	// go中没有while么？？真省事儿
 	for input.Scan() {
 		counts[input.Text()]++
+		// 强类型的好处就在于此，因为设定了类型为int，则就会默认认为这里会有一个0存在
+		// 要是在js中，这里直接undefined了
 	}
 
 	for line, n := range counts {
