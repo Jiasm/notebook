@@ -12,6 +12,7 @@ func main() {
 
 	for _, filename := range os.Args[1:] {
 		data, err := ioutil.ReadFile(filename)
+		// let data = fs.readFileSync(filename)
 
 		if err != nil {
 			fmt.Fprintf(os.Stderr, "count-line-3: %v\n", err)
@@ -19,7 +20,8 @@ func main() {
 		}
 
 		for _, line := range strings.Split(string(data), "\n") {
-			counts[line]++
+		// for (let line of data.toString().split('\n'))
+		counts[line]++
 		}
 	}
 
