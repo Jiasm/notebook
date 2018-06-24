@@ -8,7 +8,14 @@ import (
 
 func main() {
 	counts := make(map[string]int)
+	// 创建一个key是string类型，value是int类型的数组（或者可以称为对象）。
+	// typescript: 
+	//   let counts: { [k: string]: number } = {}
+  // flowtype:
+	//   let counts: { [string]: number } = {}
 	input := bufio.NewScanner(os.Stdin)
+
+	// go中没有while么？？真省事儿
 	for input.Scan() {
 		counts[input.Text()]++
 	}
