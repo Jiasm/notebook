@@ -22,6 +22,7 @@ func main() {
 			}
 
 			counter.CountLines(f, counts)
+			f.Close()
 		}
 	}
 
