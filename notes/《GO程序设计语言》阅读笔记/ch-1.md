@@ -52,3 +52,7 @@ func main() {
 3.  被引用的包中导出的函数首字母一定要大写
 
 [简单的针对多文件进行统计的例子](/labs/storage/go/ch1/counter-line-2/main.go)
+
+GOLANG 相对于其他的语言，例如 JS 之类的，在 Switch 上有一点儿特别棒。  
+所有的 case 相当于默认添加了 break，如果需要执行后续的 case，则需要手动调用 fallthrough。  
+本身 break 的场景就会多，将 break 作为默认配置，能节省不少的代码。
