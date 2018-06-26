@@ -31,4 +31,14 @@ file, err := os.Open("XXX")
 GO 中的函数参数是按值传递的，也就是说，如果我们在一个函数中要修改某个参数的值，其实是做不到的。  
 所以我们就需要用到指针，在函数中传递某个变量对应的地址，这样我们就可以无需知道实际变量是什么，而去直接修改这个变量的值。
 
-[指针修改变量的值](/labs/storage/go/ch2/point-simaple/main.go)
+```go
+x := 1          // int
+p := &x         // int的指针，指向了存储1的地址
+fmt.Println(*p) // 1
+*p = 2          // 修改了该指针对应地址的值为2，也就是说，x的值也会跟着改变
+fmt.Println(x)  // 2
+```
+
+[指针修改变量的值](/labs/storage/go/ch2/point-simaple/main.go)  
+不同于 JavaScript 的按值传递 JS 在传递一些非基本类型时，所传的值其实就是地址，所以在 GO 中，一个 struct，接近 JS 中 object 结构的值，依旧无法直接修改其对应的值，必须要用传递指针的方式才可以修改：  
+[指针修改 Struct 变量的值](/labs/storage/go/ch2/point-simaple/main.go)
