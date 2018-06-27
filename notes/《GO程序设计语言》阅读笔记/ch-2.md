@@ -58,3 +58,35 @@ fmt.Println(x)  // 2
 在 GO 中赋值需要保证两边的类型一致，当然也有例外，比如 nil 可以赋值给任意接口变量或引用类型。  
 使用`==`、`!=`进行判断时也需要保证两侧的类型一致，这也就是为什么在一些函数调用时会判断`err != nil`。  
 因为 int、string 之类的有自己的零值，所以 nil 不能用于对其的判断。
+
+### 类型声明
+
+我们可以通过`type <TYPE_NAME> <REAL_TYPE>`的方式来声明一个特殊的类型。  
+一般类型都会在包级别的代码声明，如果是大写开头的类型，则认为是导出的，其他的包也可以访问到这个类型。  
+
+使用`<TYPE_NAME>(XXX)`即可完成强制的类型转换，原始类型也可以这么用。  
+例如`int(1)`之类的，如果两个类型具有相同的底层类型、或者二者都是指向相同底层类型变量的未命名指针类型。  
+*如果值对于要转换的类型来说是可赋值的，那么类型转换也是生效的，但是通常不这么做*
+
+```go
+type Age int
+```
+
+即使两个类型的原始类型是一致的，也没有办法直接使用算术运算符进行比较或者操作。  
+
+```go
+type Age int
+type Gender int
+
+var (
+	age Age = 1
+	gender Gender = 2
+)
+
+age + gender
+// invalid operation: age + gender (mismatched types Age and Gender)
+
+age + Age(gender)       // 将两者类型转为一致即可
+int(age) + int(gender)  // 全部转换为int
+age + 1                 // 直接使用原始值也是可以的，因为会自动转换为age所对应的类型
+```
