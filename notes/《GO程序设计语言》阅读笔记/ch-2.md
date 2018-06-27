@@ -52,3 +52,9 @@ fmt.Println(x)  // 2
 [指针修改变量的值](/labs/storage/go/ch2/point-simaple/main.go)  
 不同于 JavaScript 的按值传递 JS 在传递一些非基本类型时，所传的值其实就是地址，所以在 GO 中，一个 struct，接近 JS 中 object 结构的值，依旧无法直接修改其对应的值，必须要用传递指针的方式才可以修改：  
 [指针修改 Struct 变量的值](/labs/storage/go/ch2/point-simaple/main.go)
+
+### 可赋值性
+
+在 GO 中赋值需要保证两边的类型一致，当然也有例外，比如 nil 可以赋值给任意接口变量或引用类型。  
+使用`==`、`!=`进行判断时也需要保证两侧的类型一致，这也就是为什么在一些函数调用时会判断`err != nil`。  
+因为 int、string 之类的有自己的零值，所以 nil 不能用于对其的判断。
