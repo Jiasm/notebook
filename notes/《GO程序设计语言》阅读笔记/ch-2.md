@@ -90,3 +90,30 @@ age + Age(gender)       // 将两者类型转为一致即可
 int(age) + int(gender)  // 全部转换为int
 age + 1                 // 直接使用原始值也是可以的，因为会自动转换为age所对应的类型
 ```
+
+### 包和文件
+
+相同目录下多个文件可以使用同一个包名，在引入该包时就会引入所有的`.go`文件内容了。  
+> pkg/types.go
+
+```go
+package info
+
+type Age int
+type Gender int
+
+const (
+  age Age = 18
+  gender Gender = 1
+)
+```
+
+> pkg/methods.go
+
+```go
+package info
+
+func SHowInfo () {
+  fmt.Printf("Age: %d Gender: %d", Age, Gender)
+}
+```
