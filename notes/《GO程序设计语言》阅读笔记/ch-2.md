@@ -126,3 +126,28 @@ func SHowInfo () {
 
 在一个包中（不在任何语法块中）声明的变量作用域为包。所有该包内的程序都可以引用到他。  
 `import XXX`是文件级别的，即使相同包，不同文件，文件a引用了，文件b也需要引用才可以使用。  
+
+在`for`、`if`和`switch`这类语句中声明的变量，在语句外不能够访问。  
+但是`if`创建的变量在同一个流程中的`else`可以访问。  
+
+使用一些会返回`err`对象的实践：
+```go
+if f, err := os.Open(filename); err != nil {
+  return err
+}
+f.Stat() // 报错，因为f没有定义
+
+// 可以这么写
+f, err := os.Open(filename)
+if err != nil {
+  return err
+}
+f.Stat()
+// 或者
+if f, err := os.Open(filename); err != nil {
+  return err
+} else {
+  f.Stat() // f 在else块中是可以访问的
+}
+```
+> 在GO中的经常做法是采用第一种方式，保证正确的流程不会放到太多的else中区
