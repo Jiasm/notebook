@@ -7,6 +7,7 @@ export default class TodoList extends HTMLElement {
     this.$shadow = this.attachShadow({ mode: 'open' })
     this.$style = document.createElement('style')
     this.$wrap = document.createElement('div')
+    this.$op = document.createElement('div')
     this.$input = document.createElement('input')
     this.$button = document.createElement('button')
 
@@ -30,13 +31,18 @@ export default class TodoList extends HTMLElement {
   }
 
   connectedCallback() {
-    let { data, $shadow, $style, $wrap, $input, $button } = this
+    let { data, $shadow, $style, $wrap, $op, $input, $button } = this
 
     $wrap.className = 'todo-list'
 
     $style.textContent = `
-      .todo-list { width: 200px; }
+      .todo-list { width: 200px; margin: 0 auto; }
     `
+
+    $button.innerHTML = 'Add'
+    $input.placeholder = 'add new msg'
+
+    $wrap.appendChild($op)
 
     data.forEach((item, index) => {
       let $todoItem = new TodoItem()
@@ -50,18 +56,14 @@ export default class TodoList extends HTMLElement {
     $wrap.addEventListener('finish', this.finish)
     $wrap.addEventListener('undo', this.undo)
     $wrap.addEventListener('delete', this.delete)
-
-    $button.innerHTML = 'Add'
-    $input.placeholder = 'add new msg'
-
     $button.addEventListener('click', _ => {
       if ($input.value) {
         this.add($input.value)
       }
     })
 
-    $shadow.appendChild($input)
-    $shadow.appendChild($button)
+    $op.appendChild($input)
+    $op.appendChild($button)
 
     $shadow.appendChild($style)
     $shadow.appendChild($wrap)
