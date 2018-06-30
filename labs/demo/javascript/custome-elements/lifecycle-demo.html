@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>LifeCycle Demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <div id="wrap">
+    <div id="content"></div>
+  </div>
+  <script>
+    class Tag extends HTMLElement {
+      static get observedAttributes() { return ['id'] }
+      connectedCallback() { console.log('DOM被添加到文档中') }
+      disconnectedCallback() { console.log('DOM被从文档中移除') }
+      adoptedCallback() { console.log('DOM被移动') }
+      attributeChangedCallback() { console.log('DOM属性有修改') }
+    }
+
+    customElements.define('cus-tag', Tag)
+
+    let $wrap = document.querySelector('#wrap')
+    let $content = document.querySelector('#content')
+    let $tag = document.createElement('cus-tag')
+
+    $wrap.appendChild($tag)
+    $content.appendChild($tag)
+    $tag.setAttribute('id', 'tag-id')
+    $tag.setAttribute('id', 'tag-id2')
+    $tag.removeAttribute('id')
+    $content.removeChild($tag)
+  </script>
+</body>
+
+</html>

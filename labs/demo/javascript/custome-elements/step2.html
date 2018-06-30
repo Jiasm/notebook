@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Example For shadow-DOM</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <div id="info1"></div>
+  <div id="info2"></div>
+  <script>
+    function initShadow($host, { avatar, name, isOpen }) {
+      let $shadow = $host.attachShadow({ mode: isOpen ? 'open' : 'closed' })
+
+      let $style = document.createElement('style')
+      let $wrap = document.createElement('div')
+      let $avatar = document.createElement('img')
+      let $name = document.createElement('p')
+
+      $style.textContent = `
+        .info { display: flex; }
+        .info-avatar { width: 100px; height: 100px; border-radius: 50%; }
+        .info-name { display: flex; align-items: center; font-size: 16px; }
+      `
+
+      $wrap.className = 'info'
+      $avatar.className = 'info-avatar'
+      $name.className = 'info-name'
+
+      $avatar.src = avatar
+      $name.innerHTML = name
+
+      $wrap.appendChild($avatar)
+      $wrap.appendChild($name)
+
+      $shadow.appendChild($style)
+      $shadow.appendChild($wrap)
+    }
+
+    initShadow(document.querySelector('#info1'), {
+      avatar: 'https://avatars1.githubusercontent.com/u/9568094?v=4',
+      name: 'Jarvis'
+    });
+    initShadow(document.querySelector('#info2'), {
+      isOpen: true,
+      avatar: 'https://avatars1.githubusercontent.com/u/9568094?v=4',
+      name: 'Jarvis'
+    })
+  </script>
+</body>
+
+</html>
