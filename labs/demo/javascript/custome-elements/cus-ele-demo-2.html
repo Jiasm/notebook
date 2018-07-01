@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Example custom-elements</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <cus-info>
+    <p>native text</p>
+    <!-- 默认是可以直接嵌套的，除非在自定义组件中移除 -->
+  </cus-info>
+  <script>
+    class CusInfo extends HTMLElement {
+      constructor() {
+        super()
+
+        let $shadow = this.attachShadow({ mode: 'open' })
+        let $text = document.createElement('p')
+        $text.innerHTML = 'Hello custom-elements.'
+
+        $shadow.appendChild($text)
+      }
+    }
+
+    customElements.define('cus-info', CusInfo)
+    console.log(document.querySelector('cus-info').children[0].innerHTML) // native text)
+  </script>
+</body>
+
+</html>

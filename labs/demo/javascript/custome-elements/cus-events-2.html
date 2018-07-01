@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Example cus-events</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <cus-list>
+    <input id="output" />
+    <cus-btn data-text="Button 1"></cus-btn>
+    <cus-btn data-text="Button 2"></cus-btn>
+    <cus-btn data-text="Button 3"></cus-btn>
+  </cus-list>
+  <script>
+    class CusList extends HTMLElement {
+      connectedCallback() {
+        let $output = this.querySelector('#output')
+
+        this.addEventListener('check', event => { // 注册自定义事件的监听
+          $output.value = event.target.innerText
+        })
+      }
+    }
+    class CusBtn extends HTMLElement {
+      connectedCallback() {
+        let { text } = this.dataset
+
+        let $text = document.createElement('p')
+        $text.innerHTML = text
+
+        $text.addEventListener('click', _ => {
+          this.dispatchEvent(new Event('check', {
+            bubbles: true // 启用事件冒泡
+          })) // 触发自定义事件
+        })
+
+        this.appendChild($text)
+      }
+    }
+
+    customElements.define('cus-list', CusList)
+    customElements.define('cus-btn', CusBtn)
+  </script>
+</body>
+
+</html>
