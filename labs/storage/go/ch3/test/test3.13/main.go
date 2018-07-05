@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"math"
 )
 
 const (
@@ -13,10 +12,6 @@ const (
 	TiB
 	PiB
 	EiB
-)
-
-const (
-	test = powerf3(1, 3)
 )
 
 // const (
