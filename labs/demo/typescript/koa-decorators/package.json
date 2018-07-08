@@ -1,0 +1,48 @@
+{
+  "name": "blued-report-service",
+  "version": "1.0.0",
+  "description": "Report service.   Powered by TypeScript.",
+  "main": "index.js",
+  "scripts": {
+    "start": "NODE_ENV=local npm run serve",
+    "build": "npm run build-ts",
+    "serve": "node dist/index.js",
+    "watch-node": "NODE_ENV=local nodemon dist/index.js",
+    "build-ts": "tsc",
+    "watch-ts": "tsc -w",
+    "tslint": "tslint -c tslint.json -p tsconfig.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.blued.cn/Jarvis/blued-report-service.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "koa": "^2.5.1",
+    "koa-bodyparser": "^4.2.1",
+    "koa-compose": "^4.1.0",
+    "koa-router": "^7.4.0"
+  },
+  "devDependencies": {
+    "@types/core-js": "^2.5.0",
+    "@types/jest": "^23.1.3",
+    "@types/koa": "^2.0.46",
+    "@types/koa-bodyparser": "^5.0.0",
+    "@types/koa-compose": "^3.2.2",
+    "@types/koa-router": "^7.0.30",
+    "@types/mkdirp": "^0.5.2",
+    "@types/mysql": "^2.15.5",
+    "@types/node": "^10.5.1",
+    "@types/redis": "^2.8.6",
+    "@types/shelljs": "^0.8.0",
+    "@types/winston": "^2.3.9",
+    "nodemon": "^1.17.5",
+    "shelljs": "^0.8.2",
+    "ts-jest": "^22.4.6",
+    "ts-node": "^7.0.0",
+    "tslint": "^5.10.0",
+    "typescript": "^2.9.2"
+  }
+}
