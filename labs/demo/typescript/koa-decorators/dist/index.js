@@ -12,18 +12,18 @@ require("./controllers/detail");
 const decorators_1 = require("./decorators");
 const routers = [];
 // 遍历所有添加了装饰器的Class，并创建对应的Router对象
-decorators_1.routerMap.forEach(item => {
+decorators_1.routerList.forEach(item => {
     let { basename, constrcutor } = item;
     let router = new koa_router_1.default({
         prefix: basename
     });
-    decorators_1.controllerMap
+    decorators_1.controllerList
         .filter(i => i.target === constrcutor.prototype)
         .forEach((controller) => {
         router[controller.type](controller.path, async (ctx, next) => {
             let args = [];
             // 获取当前函数对应的参数获取
-            decorators_1.paramMap
+            decorators_1.paramList
                 .filter((param) => param.target === constrcutor.prototype &&
                 param.method === controller.method)
                 .map((param) => {
@@ -44,7 +44,7 @@ decorators_1.routerMap.forEach(item => {
                 }
             });
             // 获取当前函数对应的参数格式化
-            decorators_1.parseMap
+            decorators_1.parseList
                 .filter((parse) => parse.target === constrcutor.prototype &&
                 parse.method === controller.method)
                 .map((parse) => {

@@ -4,18 +4,18 @@ import compose from 'koa-compose'
 import bodyParse from 'koa-bodyparser'
 import './controllers/index'
 import './controllers/detail'
-import { routerMap, controllerMap, paramMap, parseMap } from './decorators'
+import { routerList, controllerList, paramList, parseList } from './decorators'
 
 const routers: any[] = []
 
 // 遍历所有添加了装饰器的Class，并创建对应的Router对象
-routerMap.forEach(item => {
+routerList.forEach(item => {
   let { basename, constrcutor } = item
   let router = new Router({
     prefix: basename
   })
 
-  controllerMap
+  controllerList
     .filter(i => i.target === constrcutor.prototype)
     .forEach(
       (controller: {
@@ -27,7 +27,7 @@ routerMap.forEach(item => {
         router[controller.type](controller.path, async (ctx: any, next) => {
           let args: any[] = []
           // 获取当前函数对应的参数获取
-          paramMap
+          paramList
             .filter(
               (param: any) =>
                 param.target === constrcutor.prototype &&
@@ -52,7 +52,7 @@ routerMap.forEach(item => {
             })
 
           // 获取当前函数对应的参数格式化
-          parseMap
+          parseList
             .filter(
               (parse: any) =>
                 parse.target === constrcutor.prototype &&
