@@ -47,7 +47,7 @@ function ClassHandler(constructor) {
 简单的例子：  
 ```javascript
 // IndexController.ts
-import {Controller, Get, Post} from 'routing-controllers
+import {Controller, Get, Post} from 'routing-controllers'
 
 @Controller('/basepath')
 export default class {
@@ -72,7 +72,7 @@ export default class {
 // app.ts
 
 import 'reflect-metadata'
-import {createExpressServer} from 'routing-controllers
+import {createExpressServer} from 'routing-controllers'
 import IndexController from './IndexController'
 
 const app = createExpressServer({
