@@ -1,17 +1,5 @@
----
-uuid: c48876f0-8d83-11e8-8291-41f8b0341cf6
-title: 'koa源码阅读[0]'
-date: 2018-07-22 15:49:31
-tags:
-  - javascript
-  - koajs
-  - 源码阅读
----
-
 Node.js也是写了两三年的时间了，刚开始学习`Node`的时候，`hello world`就是创建一个`HttpServer`，后来在工作中也是经历过`Express`、`Koa1.x`、`Koa2.x`以及最近还在研究的结合着`TypeScript`的`routing-controllers`（驱动依然是`Express`与`Koa`）。    
 用的比较多的还是`Koa`版本，也是对它的洋葱模型比较感兴趣，所以最近抽出时间来阅读其源码，正好近期可能会对一个`Express`项目进行重构，将其重构为`koa2.x`版本的，所以，阅读其源码对于重构也是一种有效的帮助。  
-
-<!-- more -->
 
 # Koa是怎么来的
 
