@@ -56,6 +56,21 @@ maps := map[string]int{
 }
 ```
 
+```go
+var maps map[string]int
+
+Println(maps == nil)    // true
+Println(len(maps) == 0) // true
+
+// 但是如果针对一个零值map来进行赋值操作会宕机
+
+maps["Niko"] = 18 // Error
+
+// 必须要先初始化
+maps = make(map[string]int)
+maps["Niko"] = 18 // Success
+```
+
 #### 删除元素
 
 删除元素可以通过内置的`delete`函数来进行操作：
