@@ -119,3 +119,22 @@ if name, ok := maps["Niko"]; !ok {
   // Niko 不是一个有效的key
 }
 ```
+
+##### 判断两个map是否相等
+
+判断两个map是否相等可以简单的使用循环结合着上述的`ok`来进行判断：
+```go
+func equal(x, y map[string]int) bool {
+	if len(x) != len(y) {
+		return false
+	}
+
+	for k, xv := range x {
+		if yx, ok := y[k]; !ok || yx != xv {
+			return false // 不存在该key，或者该key对应的值不想等
+		}
+	}
+
+	return true
+}
+```
