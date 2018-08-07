@@ -1,8 +1,8 @@
 {
-  "name": "node",
+  "name": "learning-koa-router",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "base.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,8 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "cheerio": "^1.0.0-rc.2",
-    "iconv-lite": "^0.4.23",
     "koa": "^2.5.2",
     "koa-router": "^7.4.0"
   }
