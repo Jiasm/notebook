@@ -4,38 +4,25 @@ const Router = require('koa-router')
 const app = new Koa()
 const router = new Router() // 实例化一个Router对象
 
+// 注册一个路由的监听
+router.register('/list/:id', ['GET'], ctx => {
+  console.log(ctx.captures, ctx.params)
+  ctx.body = 'hi there.'
+})
+
 router.register(
-  '/list/:id',
+  '/list1/:id',
   ['GET'],
   ctx => {
-    ctx.body = `Hi ${ctx.params.id}, query: ${ctx.querystring}`
+    console.log(ctx.captures, ctx.params)
   },
   {
-    name: 'list'
+    ignoreCaptures: true
   }
 )
-
-router.register('/', ['GET'], ctx => {
-  // /list/1?name=Niko
-  ctx.redirect(
-    router.url(
-      'list',
-      {
-        id: 1
-      },
-      {
-        query: {
-          name: 'Niko'
-        }
-      }
-    )
-  )
-})
 
 app
   .use(router.routes()) // 将该Router对象的中间件注册到Koa实例上，后续请求的主要处理逻辑
   .use(router.allowedMethods()) // 添加针对OPTIONS的响应处理，以及一些METHOD不支持的处理
 
 app.listen(8888, _ => console.log('server run as http://127.0.0.1:8888'))
-
-// curl -L http://127.0.0.1:8888 => Hi 1, query: name=Niko

@@ -13,7 +13,7 @@ router.get('/index', ctx => {
 
 app
   .use(router.routes()) // 将该Router对象的中间件注册到Koa实例上，后续请求的主要处理逻辑
-  .use(router.allowedMethods()) // 添加针对OPTIONS的响应处理，一些预检请求会先触发 OPTIONS 然后才是真正的请求
+  .use(router.allowedMethods()) // 添加针对OPTIONS的响应处理，以及一些METHOD不支持的处理
 
 app.listen(8888, _ => console.log('server run as http://127.0.0.1:8888'))
 
