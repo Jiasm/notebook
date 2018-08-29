@@ -7,6 +7,8 @@
 3. [一个标准的九宫格实现](#一个标准的九宫格实现)
 4. [纯CSS实现文本颜色与背景为反色](#纯css实现文本颜色与背景为反色)
 5. [纯CSS实现的多层级菜单栏](#纯css实现的多层级菜单栏)
+6. [纯CSS实现的三道杠图标](#纯CSS实现的三道杠图标)
+7. [纯CSS实现的双层圆点](#纯CSS实现的双层圆点)
 
 ### Notes
 
@@ -276,3 +278,13 @@
 
 > [源码](./html/deep-child-menu.html)  
 > [Live Demo](https://blog.jiasm.org/notebook/html/deep-child-menu.html)
+
+#### 纯CSS实现的三道杠图标
+
+> [源码](./html/three-line-icon.html)  
+> [Live Demo](https://blog.jiasm.org/notebook/html/three-line-icon.html)
+
+#### 纯CSS实现的双层圆点
+
+> [源码](./html/double-cycle-icon.html)  
+> [Live Demo](https://blog.jiasm.org/notebook/html/double-cycle-icon.html)
