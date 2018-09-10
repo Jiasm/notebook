@@ -1,0 +1,23 @@
+CREATE TABLE animal (
+  id INT AUTO_INCREMENT,
+  name VARCHAR(14) NOT NULL,
+  weight INT NOT NULL, 
+  PRIMARY KEY (`id`)
+);
+
+CREATE TABLE dog (
+  id INT AUTO_INCREMENT,
+  name VARCHAR(14) NOT NULL,
+  weight INT NOT NULL, 
+  leg INT NOT NULL,
+  PRIMARY KEY (`id`)
+);
+
+CREATE TABLE bird (
+  id INT AUTO_INCREMENT,
+  name VARCHAR(14) NOT NULL,
+  weight INT NOT NULL, 
+  wing INT NOT NULL,
+  claw INT NOT NULL,
+  PRIMARY KEY (`id`)
+);
