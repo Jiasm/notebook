@@ -1,10 +1,10 @@
 package main
 
 import (
-	"fmt"
-	"os"
+    "fmt"
+    "os"
 
-	"golang.org/x/net/html"
+    "golang.org/x/net/html"
 )
 
 func main() {
