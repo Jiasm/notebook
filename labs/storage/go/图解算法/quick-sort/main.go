@@ -11,7 +11,7 @@ func main () {
 }
 
 func quicksort (arr []int) []int {
-    if len(arr) == 1 { return arr[:1] }
+    if len(arr) == 1 { return arr }
 
     pivot := arr[0]
     var less []int
