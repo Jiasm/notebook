@@ -1,20 +1,17 @@
 function* fibonacci (len) {
   const res = [0, 1]
-  const cursor = res.length
-  if (len <= cursor) {
-    yield* res.slice(0, len)
-    return
-  }
+  let cursor = res.length
 
-  let index = cursor
+  yield* res.slice(0, len)
 
-  while (index < len) {
-    const item = res[index - 1] + res[index - 2]
+  if (len <= cursor) return 
+
+  while (cursor < len) {
+    const item = res[cursor - 1] + res[cursor - 2]
+    yield item
     res.push(item)
-    index += 1
+    cursor += 1
   }
-
-  yield* res
 }
 
 console.log([...fibonacci(-2)])
