@@ -111,8 +111,10 @@ func calc (goods []Goods) {
 		currentSize := good.size - 1
 		currentPrice := good.price
 		for maxPackageSize := 0; maxPackageSize < maxSize; maxPackageSize++ {
+
 			// 如果当前背包空间与物品需要的空间一致
 			if maxPackageSize == currentSize {
+
 				// 如果当前是第一行
 				// 或者
 				// 当前的价格比上一次计算的结果更有价值
@@ -120,6 +122,7 @@ func calc (goods []Goods) {
 					packageStorage[rowIndex][maxPackageSize] = currentPrice
 				} else {
 					// 否则则说明上次计算价值更高，那么用上次的结果替换
+
 					packageStorage[rowIndex][maxPackageSize] = packageStorage[rowIndex - 1][maxPackageSize]
 				}
 			} else if maxPackageSize > currentSize {
