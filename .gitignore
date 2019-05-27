@@ -62,3 +62,4 @@ typings/
 
 # Ignore mac finder
 .DS_Store
+*.swp
