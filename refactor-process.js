@@ -20,13 +20,6 @@ const done = [
     name: 'c.blued',
     value: calcScore({ dayTime: 0.5 }),
   },
-]
-
-const progress = [
-  {
-    name: 'live-http-oversea-server',
-    value: calcScore({ dayTime: 10 }),
-  },
   {
     name: 'live-tools-server',
     value: calcScore({ dayTime: 3 }),
@@ -34,6 +27,33 @@ const progress = [
   {
     name: 'live-monitor',
     value: calcScore({ dayTime: 6 }),
+  },
+  {
+    name: 'live-http-oversea-server',
+    value: calcScore({ dayTime: 10 }),
+  },
+  {
+    name: 'live-data-server',
+    value: calcScore({ dayTime: 2 }),
+  },
+]
+
+const progress = [
+  {
+    name: 'live-schedule',
+    value: calcScore({ dayTime: 6 }),
+  },
+  {
+    name: 'comment-worker',
+    value: calcScore({ dayTime: 3 }),
+  },
+  {
+    name: 'taobao',
+    value: calcScore({ dayTime: 10 }),
+  },
+  {
+    name: 'report-service',
+    value: calcScore({ dayTime: 0.5 }),
   },
 ]
 
@@ -67,24 +87,12 @@ const todo = [
     value: calcScore({ dayTime: 2 }),
   },
   {
-    name: 'chatroom、comment',
+    name: 'chatroom-worker',
     value: calcScore({ dayTime: 3 }),
-  },
-  {
-    name: 'live-data-server',
-    value: calcScore({ dayTime: 2 }),
-  },
-  {
-    name: 'report-service',
-    value: calcScore({ dayTime: 0.5 }),
   },
   {
     name: 'track-oversea',
     value: calcScore({ dayTime: 0.5 }),
-  },
-  {
-    name: 'live-schedule',
-    value: calcScore({ dayTime: 6 }),
   },
   {
     name: 'sex-monitor',
@@ -97,10 +105,6 @@ const todo = [
   {
     name: 'robot-*',
     value: calcScore({ dayTime: 4 }),
-  },
-  {
-    name: 'taobao',
-    value: calcScore({ dayTime: 10 }),
   },
 ]
 
