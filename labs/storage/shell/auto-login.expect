@@ -1,0 +1,15 @@
+#!/usr/bin/expect
+
+set timeout 10
+
+set host "host domain"
+
+set port "host port"
+
+set password "Your Password"
+
+spawn ssh $host -p $port
+
+expect "Password:" { send "$password\r" }
+
+interact
