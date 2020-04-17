@@ -36,11 +36,16 @@ const done = [
     name: 'live-data-server',
     value: calcScore({ dayTime: 2 }),
   },
-]
-
-const progress = [
   {
     name: 'live-schedule',
+    value: calcScore({ dayTime: 6 }),
+  },
+  {
+    name: 'porn-checker',
+    value: calcScore({ dayTime: 6 }),
+  },
+  {
+    name: 'oversea-porn-checker',
     value: calcScore({ dayTime: 6 }),
   },
   {
@@ -52,12 +57,25 @@ const progress = [
     value: calcScore({ dayTime: 10 }),
   },
   {
+    name: 'live-http-server',
+    value: calcScore({ dayTime: 15 }),
+  },
+  {
+    name: 'live-oversea-schedule',
+    value: calcScore({ dayTime: 6 }),
+  },
+  {
     name: 'report-service',
     value: calcScore({ dayTime: 0.5 }),
   },
-]
-
-const todo = [
+  {
+    name: 'API-worker',
+    value: calcScore({ dayTime: 2 }),
+  },
+  {
+    name: 'chatroom-worker',
+    value: calcScore({ dayTime: 3 }),
+  },
   {
     name: 'live-tools-oversea-server',
     value: calcScore({ dayTime: 2 }),
@@ -66,46 +84,20 @@ const todo = [
     name: 'report-oversea-service',
     value: calcScore({ dayTime: 2 }),
   },
-  {
-    name: 'live-oversea-schedule',
-    value: calcScore({ dayTime: 6 }),
-  },
-  {
-    name: 'live-oversea-monitor',
-    value: calcScore({ dayTime: 4 }),
-  },
-  {
-    name: 'sex-monitor-oversea',
-    value: calcScore({ dayTime: 6 }),
-  },
-  {
-    name: 'live-http-server',
-    value: calcScore({ dayTime: 15 }),
-  },
-  {
-    name: 'game-live-console',
-    value: calcScore({ dayTime: 2 }),
-  },
-  {
-    name: 'chatroom-worker',
-    value: calcScore({ dayTime: 3 }),
-  },
-  {
-    name: 'track-oversea',
-    value: calcScore({ dayTime: 0.5 }),
-  },
-  {
-    name: 'sex-monitor',
-    value: calcScore({ dayTime: 6 }),
-  },
-  {
-    name: 'live-log',
-    value: calcScore({ dayTime: 0.5 }),
-  },
+]
+
+const progress = [
   {
     name: 'robot-*',
     value: calcScore({ dayTime: 4 }),
   },
+]
+
+const todo = [
+  // {
+  //   name: 'game-live-console',
+  //   value: calcScore({ dayTime: 2 }),
+  // },
 ]
 
 const doneScore = done.reduce((res, current) => res + current.value, 0)
