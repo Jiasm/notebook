@@ -39,7 +39,7 @@
     "@types/shelljs": "^0.8.0",
     "@types/winston": "^2.3.9",
     "nodemon": "^1.17.5",
-    "shelljs": "^0.8.2",
+    "shelljs": "^0.8.5",
     "ts-jest": "^29.0.3",
     "ts-node": "^7.0.0",
     "tslint": "^5.10.0",
